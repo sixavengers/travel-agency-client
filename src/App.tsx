@@ -37,7 +37,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Redux Toolkit
+            Redux Toolkit With Six Avengers
           </a>
           ,<span> and </span>
           <a
