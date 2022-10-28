@@ -1,46 +1,87 @@
-# Getting Started with Create React App
+# Travel Agency Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+This is a simple client for the Travel Agency application. It is a simple web application that allows you to create and manage reservations.
 
-## Available Scripts
+## Running the application
 
-In the project directory, you can run:
+To run the application, you need to have Node.js installed. You can download it from [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
 
-### `yarn start`
+Once you have Node.js installed, you can run the application by executing the following commands:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+npm install
+npm start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-### `yarn test`
+## Running the tests
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run the tests, you need to have Node.js installed. You can download it from [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
 
-### `yarn build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Create a reservation
+- List all reservations
+- Cancel a reservation
+- List all flights
+- List all hotels
+- List all cars
+- List all customers
+- List all employees
+- List all airports
+- List all airlines
+- List all car rental companies
+- List all hotels
+- List all hotel chains
+- List all hotel rooms
+- List all hotel room types
+- List all hotel room amenities
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The application is built using the following technologies:
 
-### `yarn eject`
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Redux Saga](https://redux-saga.js.org/)
+- [React Router](https://reacttraining.com/react-router/)
+- [React Bootstrap](https://react-bootstrap.github.io/)
+- Axios
+- [Jest](https://jestjs.io/)
+- [Enzyme](https://airbnb.io/enzyme/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Webpack](https://webpack.js.org/)
+- [Babel](https://babeljs.io/)
+- [Sass](https://sass-lang.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Font Awesome](https://fontawesome.com/)
+- [Moment](https://momentjs.com/)
+- [React Datepicker](https://reactdatepicker.com/)
+- [React Select](https://react-select.com/home)
+- [React Toastify](https://fkhadra.github.io/react-toastify/)
+- [React Table](https://react-table.js.org/)
+- React Toggle
+- [React Transition Group](https://reactcommunity.org/react-transition-group/)
+- React Helmet
+- [React Icons](https://react-icons.netlify.com/#/)
+- React Loadable
+- React Router Bootstrap
+- React Router Config
+- React Router Dom
+- React Router Redux
+- React Router Scroll
+- React Router Transition
+- React Router Transition Group
+- React Router Transition Hook
+- React Router Transition Route
+- React Router Transition Router
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## License
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[]: # Path: client\src\actions\index.js
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+> Note: The tests are currently not working. We are working on fixing them.
