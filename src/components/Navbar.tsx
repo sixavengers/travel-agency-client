@@ -11,9 +11,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed z-30 w-full font-poppins">
+    <nav className="fixed z-50 w-full font-poppins">
       <div className="container mx-auto">
-        <div className="flex justify-between items-center h-24 w-full px-4  z-10 nav-area left-0">
+        <div className="flex justify-between items-center h-24 w-full px-4  z-50 nav-area left-0">
           <div className="logo">
             <img className="logo" src={LOGO} alt="app-logo" />
           </div>

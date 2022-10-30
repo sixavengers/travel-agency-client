@@ -1,7 +1,24 @@
 const Home = () => {
   return (
-    <div className="w-full h-screen relative bg-img grid place-items-center font-poppins">
-      <div className="container mx-auto">
+    <div className="w-full h-screen relative  grid place-items-center font-poppins">
+      <div className="absolute top-0 left-0 w-full h-full bg-[#000300] opacity-50 z-40"></div>
+
+      {/* Video area */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        <source
+          src={
+            "https://res.cloudinary.com/drnjkysvv/video/upload/v1667133020/maldivesVideo_uxildc.mp4"
+          }
+          type="video/mp4"
+        />
+      </video>
+
+      <div className="container mx-auto z-50">
         <div className="flex items-center justify-between gap-80">
           <div className="left-content flex-1">
             <h1 className="text-5xl font-bold text-white font-poppins leading-snug">
