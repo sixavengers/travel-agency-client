@@ -46,6 +46,7 @@ const Home = () => {
                 Himchari National Park has waterfalls and many birds. North, sea
                 turtles breed on nearby Sonadia Island.
               </p>
+
               <div className="flex items-center gap-3 mt-4">
                 <span
                   onClick={() => setOpen(true)}
