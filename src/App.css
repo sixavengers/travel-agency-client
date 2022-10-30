@@ -6,6 +6,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.637)),
     url(/src/images/home-bg.png);
 }
+
 .logo {
   width: 120px;
   height: 56px;
@@ -16,6 +17,7 @@
   border: 1px solid #ffffff;
   border-radius: 5px;
 }
+
 .search-input input::placeholder {
   color: #ffffff;
 }

@@ -47,6 +47,12 @@ const Home = () => {
                 turtles breed on nearby Sonadia Island.
               </p>
 
+              <div className="heading">
+                <h1>Welcome to the Travel Agency</h1>
+              </div>
+
+              <button className="btn">Button</button>
+
               <div className="flex items-center gap-3 mt-4">
                 <span
                   onClick={() => setOpen(true)}
