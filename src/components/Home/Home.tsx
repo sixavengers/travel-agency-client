@@ -33,6 +33,10 @@ const Home = () => {
         <div className="container mx-auto z-50">
           <div className="flex items-center justify-between gap-80">
             <div className="left-content flex-1">
+              <div className="heading">
+                <h1>Welcome to the Travel Agency</h1>
+              </div>
+
               <h1 className="text-5xl font-bold text-white font-poppins leading-snug">
                 Find Your Perfect <br />{" "}
                 <span className="text-theme-secondary">Vacation Place</span>
@@ -46,12 +50,6 @@ const Home = () => {
                 Himchari National Park has waterfalls and many birds. North, sea
                 turtles breed on nearby Sonadia Island.
               </p>
-
-              <div className="heading">
-                <h1>Welcome to the Travel Agency</h1>
-              </div>
-
-              <button className="btn">Button</button>
 
               <div className="flex items-center gap-3 mt-4">
                 <span
