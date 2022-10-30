@@ -1,18 +1,21 @@
-.bg-img{
-  background-position: center center  ;
+.bg-img {
+  background-position: center center;
   background-size: cover;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url(/src/images/home-bg.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.637)),
+    url(/src/images/home-bg.png);
 }
-.logo{
+.logo {
   width: 120px;
   height: 56px;
 }
-.input{
-  width: 370px;
-  color: white;
+
+.search-input {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #ffffff;
+  border-radius: 5px;
 }
-
-
-
+.search-input input::placeholder {
+  color: #ffffff;
+}
