@@ -1,1 +1,14 @@
 /* All sass styles putting here */
+
+.heading {
+  margin: 1rem 0rem;
+  background-color: #fff;
+  padding: 1rem;
+  h1 {
+    font-size: 1rem;
+    font-family: poppins;
+    span {
+      color: #000;
+    }
+  }
+}
