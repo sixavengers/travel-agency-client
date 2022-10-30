@@ -38,6 +38,10 @@ const Navbar = () => {
                 <li className='p-4 border-b border-gray-600 text-white'>Blog</li>
                 <li className='p-4 border-b border-gray-600 text-white'>Contact</li>
                 <li className='p-4 text-white'>Login</li>
+                <div className='flex justify-between items-center border border-white p-2 rounded input-background'>
+                <BiSearch className='pr-2' style={{color:'white'}} size={25} />
+                <input className='input' style={{outline:"none", background:"none"}} type="text" name="" id="" placeholder='Seasch your Destination...' />
+            </div>
             </ul>
         </div>
     );
