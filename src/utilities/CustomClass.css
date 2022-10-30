@@ -1,0 +1,11 @@
+.bg-theme-primary {
+  background-color: #1e88e5 !important;
+  color: #fff !important;
+}
+
+.text-theme-primary {
+  color: #1e88e5 !important;
+}
+.text-theme-secondary {
+  color: #f9a51a !important;
+}
