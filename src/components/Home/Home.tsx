@@ -66,7 +66,7 @@ const Home = () => {
                   <div className="input-group">
                     <label htmlFor="origin">Origin</label>
                     <input
-                      className="border p-4 my-1 rounded outline-none w-full bg-[#F2F2F2]"
+                      className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]"
                       type="text"
                       name="origin"
                       id="origin"
@@ -76,7 +76,7 @@ const Home = () => {
                   <div className="input-group mt-4">
                     <label htmlFor="Destination">Destination</label>
                     <input
-                      className="border p-4 my-1 rounded outline-none w-full bg-[#F2F2F2]"
+                      className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]"
                       type="text"
                       name="Destination"
                       id="Destination"
@@ -88,7 +88,7 @@ const Home = () => {
                     <div className="input-group flex-1">
                       <label htmlFor="from">From</label>
                       <input
-                        className="border p-4 my-1 rounded outline-none w-full bg-[#F2F2F2]"
+                        className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]"
                         type="date"
                         name="from"
                         id="from"
@@ -98,7 +98,7 @@ const Home = () => {
                     <div className="input-group flex-1">
                       <label htmlFor="to">To</label>
                       <input
-                        className="border p-4 my-1 rounded outline-none w-full bg-[#F2F2F2]"
+                        className="border 2xl:p-4 p-2 my-1 rounded outline-none w-full bg-[#F2F2F2]"
                         type="date"
                         name="to"
                         id="to"
@@ -107,7 +107,7 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="input-group mt-4">
-                    <button className="bg-[#F9A51A] w-full p-4 rounded hover:tracking-widest transition-all">
+                    <button className="bg-[#F9A51A] 2xl:h-16 h-12 w-full p-4 rounded hover:tracking-widest transition-all">
                       Start Booking
                     </button>
                   </div>
