@@ -5,15 +5,15 @@ import "./../../utilities/modal-video.min.css";
 const Home = () => {
   const [isOpen, setOpen] = useState(false);
   return (
-    <>
+    <div className=" -z-10">
       <ModalVideo
         channel="youtube"
         isOpen={isOpen}
         videoId="JxCDg3qZBOE"
         onClose={() => setOpen(false)}
       />
-      <div className="w-full min-h-screen relative  grid place-items-center font-poppins">
-        <div className="absolute top-0 left-0 bg-[#000300] opacity-50 z-40 w-full h-full"></div>
+      <div className="w-full min-h-screen grid place-items-center font-poppins">
+        <div className="absolute top-0 right-0 bottom-0 left-0 bg-[#000300] opacity-50 z-40 w-full h-full"></div>
 
         {/* Video area */}
         <video
@@ -33,9 +33,11 @@ const Home = () => {
         <div className="container mx-auto z-50 mt-10 px-5 2xl:px-0">
           <div className="flex items-center justify-between 2xl:gap-80 gap-28 flex-col md:flex-row">
             <div className="left-content 2xl:flex-1 md:mt-10 mt-28">
-              <h1 className="md:text-5xl text-2xl font-bold  text-white font-poppins leading-snug">
+              <h1 className="md:text-5xl text-5xl font-bold  text-white font-poppins leading-snug">
                 Find Your Perfect <br />
-                <span className="text-theme-secondary">Vacation Place</span>
+                <span className="text-theme-secondary text-5xl">
+                  Vacation Place
+                </span>
               </h1>
               <p className="text-white mt-4 2xl:leading-7 leading-7 text-justify">
                 Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s
@@ -117,7 +119,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
