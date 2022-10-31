@@ -5,7 +5,7 @@ import "./../../utilities/modal-video.min.css";
 const Home = () => {
   const [isOpen, setOpen] = useState(false);
   return (
-    <div className=" -z-10">
+    <div>
       <ModalVideo
         channel="youtube"
         isOpen={isOpen}
@@ -30,12 +30,12 @@ const Home = () => {
           />
         </video>
 
-        <div className="container mx-auto z-50 mt-10 px-5 2xl:px-0">
-          <div className="flex items-center justify-between 2xl:gap-80 gap-28 flex-col md:flex-row">
+        <div className="lg:container z-40 mx-auto px-5 2xl:px-0">
+          <div className="flex items-center justify-between 2xl:gap-80 xl:gap-28 flex-col md:flex-row md:gap-x-8 md:gap-y-12 gap-14">
             <div className="left-content 2xl:flex-1 md:mt-10 mt-28">
-              <h1 className="md:text-5xl text-5xl font-bold  text-white font-poppins leading-snug">
+              <h1 className="md:text-4xl xl:font-5xl font-bold  text-white font-poppins leading-snug">
                 Find Your Perfect <br />
-                <span className="text-theme-secondary text-5xl">
+                <span className="text-theme-secondary md:text-4xl xl:font-5xl">
                   Vacation Place
                 </span>
               </h1>
@@ -52,7 +52,7 @@ const Home = () => {
               <div className="flex items-center gap-3 mt-4">
                 <span
                   onClick={() => setOpen(true)}
-                  className="w-12 h-12 bg-white grid place-items-center text-4xl cursor-pointer rounded-full text-black absolute left-14 bottom-6 2xl:bottom-8"
+                  className="w-12 h-12 bg-white grid place-items-center text-4xl cursor-pointer rounded-full text-black absolute left-[4%] md:bottom-[6%] bottom-1"
                 >
                   <BiPlay />
                 </span>
