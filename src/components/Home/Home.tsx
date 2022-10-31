@@ -31,7 +31,7 @@ const Home = () => {
         </video>
 
         <div className="lg:container z-40 mx-auto px-5 2xl:px-0">
-          <div className="flex items-center justify-between 2xl:gap-80 xl:gap-28 flex-col md:flex-row md:gap-x-8 md:gap-y-12 gap-14">
+          <div className="flex items-center justify-between 2xl:gap-80 xl:gap-28 flex-col md:flex-row md:gap-x-8 md:gap-y-12 gap-14 lg:px-8">
             <div className="left-content 2xl:flex-1 md:mt-10 mt-28">
               <h1 className="md:text-4xl xl:font-5xl font-bold  text-white font-poppins leading-snug">
                 Find Your Perfect <br />
@@ -63,7 +63,7 @@ const Home = () => {
               </div>
             </div>
             <div className="right-content 2xl:flex-1">
-              <form action="" className="bg-white shadow rounded 2xl:p-20 p-10">
+              <form action="" className="bg-white shadow rounded 2xl:p-20 p-10 lg:pr-8">
                 <div className="inputs">
                   <div className="input-group">
                     <label htmlFor="origin">Origin</label>
@@ -110,7 +110,7 @@ const Home = () => {
                   </div>
                   <div className="input-group mt-4">
                     <button className="bg-[#F9A51A] 2xl:h-16 h-12 w-full p-4 rounded hover:tracking-widest transition-all">
-                      start booking
+                      Start Booking
                     </button>
                   </div>
                 </div>
