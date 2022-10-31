@@ -11,11 +11,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed z-50 w-full font-poppins">
-      <div className="container mx-auto">
-        <div className="flex justify-between items-center h-24 w-full px-4  z-50 nav-area left-0">
-          <div className="logo">
-            <img className="logo" src={LOGO} alt="app-logo" />
+    <nav className="w-full font-poppins z-50  sticky top-8 bg-transparent h-20">
+      <div className="container mx-auto h-full bg-transparent">
+        <div className="flex justify-between items-center w-full lg:px-4  z-50 nav-area left-0">
+          <div className="logo flex items-center">
+            <img
+              className="logo h-10 w-20 md:h-auto md:w-auto "
+              src={LOGO}
+              alt="app-logo"
+            />
           </div>
 
           <div className="flex justify-between items-center border border-white p-2 rounded search-input w-96">
