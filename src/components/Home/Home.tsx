@@ -110,7 +110,7 @@ const Home = () => {
                   </div>
                   <div className="input-group mt-4">
                     <button className="bg-[#F9A51A] 2xl:h-16 h-12 w-full p-4 rounded hover:tracking-widest transition-all">
-                      Start Booking
+                      start booking
                     </button>
                   </div>
                 </div>
