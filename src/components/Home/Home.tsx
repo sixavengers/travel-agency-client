@@ -12,15 +12,15 @@ const Home = () => {
         videoId="JxCDg3qZBOE"
         onClose={() => setOpen(false)}
       />
-      <div className="w-full h-screen relative  grid place-items-center font-poppins">
-        <div className="absolute top-0 left-0 bg-[#000300] opacity-50 z-40 w-screen h-screen"></div>
+      <div className="w-full min-h-screen relative  grid place-items-center font-poppins">
+        <div className="absolute top-0 left-0 bg-[#000300] opacity-50 z-40 w-full h-full"></div>
 
         {/* Video area */}
         <video
           autoPlay
           loop
           muted
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full object-cover h-full"
         >
           <source
             src={
@@ -31,9 +31,9 @@ const Home = () => {
         </video>
 
         <div className="container mx-auto z-50 mt-10 px-5 2xl:px-0">
-          <div className="flex items-center justify-between 2xl:gap-80 gap-28 ">
-            <div className="left-content 2xl:flex-1">
-              <h1 className="2xl:text-5xl text-5xl font-bold  text-white font-poppins leading-snug">
+          <div className="flex items-center justify-between 2xl:gap-80 gap-28 flex-col md:flex-row">
+            <div className="left-content 2xl:flex-1 md:mt-10 mt-28">
+              <h1 className="md:text-5xl text-2xl font-bold  text-white font-poppins leading-snug">
                 Find Your Perfect <br />
                 <span className="text-theme-secondary">Vacation Place</span>
               </h1>
@@ -60,7 +60,7 @@ const Home = () => {
                 </button>
               </div>
             </div>
-            <div className="right-content 2xl:flex-1 ">
+            <div className="right-content 2xl:flex-1">
               <form action="" className="bg-white shadow rounded 2xl:p-20 p-10">
                 <div className="inputs">
                   <div className="input-group">

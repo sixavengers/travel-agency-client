@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed z-50 w-full font-poppins">
+    <nav className="fixed w-full font-poppins z-50">
       <div className="container mx-auto">
         <div className="flex justify-between items-center h-24 w-full px-4  z-50 nav-area left-0">
           <div className="logo">
