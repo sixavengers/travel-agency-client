@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
+import { Link } from "react-router-dom";
 import LOGO from "../images/logo.png";
 
 const Navbar = () => {
@@ -11,7 +12,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full font-poppins z-50  sticky top-8 bg-transparent h-20">
+    <nav
+      className={`w-full font-poppins z-50  sticky top-3  bg-transparent h-20`}
+    >
       <div className="container mx-auto h-full bg-transparent">
         <div className="flex justify-between items-center w-full lg:px-4  z-50 nav-area left-0">
           <div className="logo flex items-center">
@@ -34,12 +37,20 @@ const Navbar = () => {
           </div>
 
           <ul className="hidden md:flex text-white items-center gap-5">
-            <li className="p-4 cursor-pointer">News</li>
-            <li className="p-4 cursor-pointer">Destination</li>
-            <li className="p-4 cursor-pointer">Blog</li>
-            <li className="p-4 cursor-pointer">Contact</li>
+            <li className="p-4 cursor-pointer">
+              <Link to="/news">News</Link>
+            </li>
+            <li className="p-4 cursor-pointer">
+              <Link to="/destination">Destination</Link>
+            </li>
+            <li className="p-4 cursor-pointer">
+              <Link to="/blog">Blog</Link>
+            </li>
+            <li className="p-4 cursor-pointer">
+              <Link to="/contact">Contact</Link>
+            </li>
             <li className="mt-4 mb-4 p-2 px-5 bg-[#F9A51A] rounded cursor-pointer">
-              Login
+              <Link to="/login">Login</Link>
             </li>
           </ul>
 
