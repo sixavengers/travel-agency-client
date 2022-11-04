@@ -4,6 +4,7 @@ import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar";
 import Login from "./pages/login-register/Login";
 import Register from "./pages/login-register/Register";
+import Packages from "./pages/packeges/Packages";
 import "./utilities/CustomClass.css";
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/packages" element={<Packages />} />
       </Routes>
     </div>
   );
