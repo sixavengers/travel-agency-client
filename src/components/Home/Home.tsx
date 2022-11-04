@@ -5,7 +5,7 @@ import "./../../utilities/modal-video.min.css";
 const Home = () => {
   const [isOpen, setOpen] = useState(false);
   return (
-    <div>
+    <div className="full-area">
       <ModalVideo
         channel="youtube"
         isOpen={isOpen}
@@ -30,16 +30,19 @@ const Home = () => {
           />
         </video>
 
-        <div className="lg:container z-40 mx-auto px-5 2xl:px-0">
+        <div className="lg:container z-40 px-5 2xl:px-0">
           <div className="flex items-center justify-between 2xl:gap-80 xl:gap-28 flex-col md:flex-row md:gap-x-8 md:gap-y-12 gap-14">
-            <div className="left-content 2xl:flex-1 md:mt-10 mt-28">
+
+          {/* TEXT AREA */}
+
+            <div className="left-content 2xl:flex-1 md:mt-10 mt-8 mx-auto">
               <h1 className="md:text-4xl xl:font-5xl font-bold  text-white font-poppins leading-snug">
                 Find Your Perfect <br />
                 <span className="text-theme-secondary md:text-4xl xl:font-5xl">
                   Vacation Place
                 </span>
               </h1>
-              <p className="text-white mt-4 2xl:leading-7 leading-7 text-justify">
+              <p className="text-white mt-4 2xl:leading-7 md:leading-7 text-justify">
                 Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s
                 known for its very long, sandy beachfront, stretching from Sea
                 Beach in the north to Kolatoli Beach in the south. Aggameda
@@ -50,9 +53,10 @@ const Home = () => {
               </p>
 
               <div className="flex items-center gap-3 mt-4">
+                {/* ========================== */}
                 <span
                   onClick={() => setOpen(true)}
-                  className="w-12 h-12 bg-white grid place-items-center text-4xl cursor-pointer rounded-full text-black absolute left-[4%] md:bottom-[6%] bottom-1"
+                  className="w-12 h-12 bg-white grid place-items-center text-4xl cursor-pointer rounded-full text-black absolute left-[4%] bottom-[35%] md:bottom-[2%]"
                 >
                   <BiPlay />
                 </span>
@@ -62,7 +66,9 @@ const Home = () => {
                 </button>
               </div>
             </div>
-            <div className="right-content 2xl:flex-1">
+
+            {/* FORM AREA  ====================== */}
+            <div className="right-content 2xl:flex-1 mt-5 mx-auto">
               <form action="" className="bg-white shadow rounded 2xl:p-20 p-10">
                 <div className="inputs">
                   <div className="input-group">
@@ -85,8 +91,8 @@ const Home = () => {
                       placeholder="Destination"
                     />
                   </div>
-
-                  <div className="input-flex flex items-center gap-4 mt-4">
+                  {/* ================================================== */}
+                  <div className="input-flex md:flex items-center gap-4 mt-4">
                     <div className="input-group flex-1">
                       <label htmlFor="from">From</label>
                       <input
