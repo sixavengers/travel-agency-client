@@ -1,33 +1,58 @@
 import React from 'react'
-import { AiOutlineSearch } from 'react-icons/ai'
-
+import { AiOutlineSwap } from 'react-icons/ai'
+import PackagesCard from './PackagesCard';
+import SidebarFilter from './SidebarFilter';
 type Props = {}
 
 const Packages = (props: Props) => {
 
-
     return (
-        <div>
-            <section className='flex px-2'>
-                <div className='w-[300px] mr-3'>
-                    <div className=' mb-3'>
-                        <p className='rounded-t-md flex items-center p-2 bg-[#0089F6]'>
-                            <span className='mr-2 text-2xl font-extrabold text-white '><AiOutlineSearch /></span>
-                            <span className='text-white font-semibold'>35 RESULTS FOUND</span>
-                        </p>
-                        <p className='text-[#0089F6] rounded-b-md text-center p-2 border border-[#0089F6]'>Book now! before sold out</p>
-                    </div>
-                    <div className='bg-slate-300 h-[600px] rounded-md p-2'>
-                        <div>
-                            <p>Price Range</p>
+        <div className='mt-5 px-3'>
 
-                            
-                        </div>
+            {/*============================== 
+                *Top search bar section start
+            ===============================*/}
+
+            <section className='py-5'>
+                <form action="" className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5'>
+                    <div className=''>
+                        <p className='font-semibold text-center font-poppins'>Origin</p>
+                        <input type="text" name="origin" id="" placeholder='Origin' className='outline-none border border-gray-400 py-2 px-3 rounded-full shadow-md w-full sm:max-w-xs lg:max-w-full font-poppins' />
                     </div>
+                    <div className='relative'>
+                        <span className='hidden sm:block absolute border border-gray-300 top-7 sm:left-[-35px] md:left-[-27px] bg-white z-20 cursor-pointer p-2 rounded-full '><AiOutlineSwap /></span>
+                        <p className='font-semibold text-center font-poppins'>Destination</p>
+                        <input type="text" name="destination" id="" placeholder='Destination' className='outline-none border border-gray-400 py-2 px-3 rounded-full shadow-md w-full sm:max-w-xs lg:max-w-full font-poppins' />
+                    </div>
+                    <div className=''>
+                        <p className='font-semibold text-center font-poppins'>Journey Date</p>
+                        <input type="date" name="journeyDate" id="" placeholder='Destination' className='outline-none border border-gray-400 py-2 px-3 rounded-full shadow-md w-full sm:max-w-xs lg:max-w-full' />
+                    </div>
+                    <div className=''>
+                        <p className='font-semibold text-center font-poppins'>Return Date</p>
+                        <input type="date" name="returnDate" id="" className='outline-none border border-gray-400 py-2 px-3 rounded-full shadow-md w-full sm:max-w-xs lg:max-w-full' />
+                    </div>
+                    <div className=''>
+                        <input type="submit" value="Search" name="returnDate" id="" className='outline-none border border-gray-400 py-2 px-3 rounded-full shadow-md mt-6 bg-[#1e88e5] text-white font-semibold cursor-pointer w-full sm:max-w-xs font-poppins' />
+                    </div>
+                </form>
+            </section>
+
+            {/*============================== 
+                *Sidebar Filter section start
+            ===============================*/}
+
+            <section className='flex'>
+                <div className='w-[300px] mr-3 hidden lg:block'>
+                    <SidebarFilter />
                 </div>
 
-                <div className='bg-slate-300 w-10/12 h-[700px]'>
+                {/*============================== 
+                *Packages card section start
+                ===============================*/}
 
+                <div className=' w-full md:w-[82%] mx-auto'>
+                    <PackagesCard />
                 </div>
             </section>
         </div>
