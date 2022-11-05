@@ -7,7 +7,7 @@ type Props = {}
 const Packages = (props: Props) => {
 
     return (
-        <div className='mt-5 px-3'>
+        <div className='my-5 px-3'>
 
             {/*============================== 
                 *Top search bar section start
