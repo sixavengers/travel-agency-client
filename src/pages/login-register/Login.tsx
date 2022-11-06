@@ -7,9 +7,9 @@ const Login = () => {
   const {
     register,
     formState: { errors },
-    handleSubmit,
   } = useForm();
-  // const onSubmit = data => console.log(data);
+
+  /* Added comment */
 
   return (
     <div className="flex h-screen justify-center items-center font-montserrat">
