@@ -12,7 +12,7 @@ const Login = () => {
   // const onSubmit = data => console.log(data);
 
   return (
-    <div className="flex h-screen justify-center items-center">
+    <div className="flex h-screen justify-center items-center font-montserrat">
       <div>
         <div className="sm:w-86 lg:w-96 border-2 p-5 rounded">
           <div className="card-body">
