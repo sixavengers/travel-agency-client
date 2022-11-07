@@ -33,16 +33,12 @@ const Home = (props: Props) => {
             type="video/mp4"
           />
         </video>
-
-        <div className="lg:container z-40 px-5 2xl:px-0">
-          <div className="flex items-center justify-between 2xl:gap-80 xl:gap-28 flex-col md:flex-row md:gap-x-8 md:gap-y-12 gap-14">
-
-          {/* TEXT AREA */}
-
-            <div className="left-content 2xl:flex-1 md:mt-10 mt-8 mx-auto">
-              <h1 className="md:text-4xl xl:font-5xl font-bold  text-white font-poppins leading-snug">
+        <div className="lg:container z-40 mx-auto px-5 2xl:px-0">
+          <div className="flex items-center justify-between 2xl:gap-80 lg:gap-28 flex-col md:flex-row md:gap-x-8 md:gap-y-12 gap-14 ">
+            <div className="left-content 2xl:flex-1 md:mt-10 mt-28 mx-auto sm:pr-8">
+              <h1 className="md:text-4xl lg:font-5xl font-bold  text-white font-poppins leading-snug">
                 Find Your Perfect <br />
-                <span className="text-theme-secondary md:text-4xl xl:font-5xl">
+                <span className="text-theme-secondary md:text-4xl lg:font-5xl">
                   Vacation Place
                 </span>
               </h1>
@@ -70,10 +66,9 @@ const Home = (props: Props) => {
                 </button>
               </div>
             </div>
+            <div className="right-content 2xl:flex-1 sm:pr-8">
+              <form action="" className="bg-white shadow rounded 2xl:p-20 p-10 sm:pr-8 lg:pr-8">
 
-            {/* FORM AREA  ====================== */}
-            <div className="right-content 2xl:flex-1 mt-5 mx-auto">
-              <form action="" className="bg-white shadow rounded 2xl:p-20 p-10">
                 <div className="inputs">
                   <div className="input-group">
                     <label htmlFor="origin">Origin</label>
