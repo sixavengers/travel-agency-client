@@ -16,9 +16,9 @@ $sidebar-color-quaternary: #568bf2;
     left: 0%;
     top: 0%;
     z-index: 1;
-    width: 350px;
+    width: 340px;
     height: 100%;
-    border-radius: 0rem 3rem 3rem 0rem;
+    border-radius: 0rem 2rem 2rem 0rem;
     background: linear-gradient(
       360deg,
       $sidebar-color-primary,
@@ -82,9 +82,9 @@ $sidebar-color-quaternary: #568bf2;
 
   .dashboard__main {
     position: relative;
-    left: 350px;
+    left: 340px;
     top: 0%;
-    width: calc(100% - 350px);
+    width: calc(100% - 340px);
     height: 100%;
     padding: 1rem;
   }
