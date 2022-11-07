@@ -2,7 +2,11 @@ import { useState } from "react";
 import { BiPlay } from "react-icons/bi";
 import ModalVideo from "react-modal-video";
 import "./../../utilities/modal-video.min.css";
-const Home = () => {
+import React from 'react'
+
+type Props = {}
+
+const Home = (props: Props) => {
   const [isOpen, setOpen] = useState(false);
   return (
     <div className="full-area">
@@ -122,6 +126,13 @@ const Home = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Home;
+export default Home
+// type Props = {}
+
+// const Home = ():Props => {
+
+// };
+
+// export default Home;
