@@ -26,9 +26,9 @@ const Navbar = () => {
             />
           </div>
 
-          <div className="flex justify-between items-center border border-white p-2 rounded search-input w-96">
+          <div className="justify-between items-center border border-white p-2 rounded search-input w-96 hidden md:flex ">
             <BiSearch className="pr-2 text-white" size={25} />
-            <input
+            <input 
               className="input bg-transparent text-white outline-none w-full"
               type="text"
               name=""
@@ -36,6 +36,29 @@ const Navbar = () => {
               placeholder="Search your Destination..."
             />
           </div>
+
+          {/* <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center border border-white p-2 rounded search-input w-96">
+              <BiSearch className="pr-2 text-white" size={25} />
+              <input
+                className="input bg-transparent text-white outline-none w-full"
+                type="text"
+                name=""
+                id=""
+                placeholder="Search your Destination..."
+              />
+            </div>
+
+            <ul className="hidden md:flex text-white items-center gap-5">
+              <li className="p-4 cursor-pointer">News</li>
+              <li className="p-4 cursor-pointer">Destination</li>
+              <li className="p-4 cursor-pointer">Blog</li>
+              <li className="p-4 cursor-pointer">Contact</li>
+              <li className="mt-4 mb-4 p-2 px-5 bg-[#F9A51A] rounded cursor-pointer">
+                Login
+              </li>
+            </ul>
+          </div> */}
 
           <ul className="hidden md:flex text-white items-center gap-5">
             <li className="p-4 cursor-pointer">
