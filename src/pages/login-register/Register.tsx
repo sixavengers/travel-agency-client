@@ -7,9 +7,7 @@ const Register = () => {
   const {
     register,
     formState: { errors },
-    handleSubmit,
   } = useForm();
- 
 
   return (
     <div className="flex h-screen justify-center items-center mt-20 font-poppins">
