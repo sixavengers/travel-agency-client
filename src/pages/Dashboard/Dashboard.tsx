@@ -1,20 +1,64 @@
-import { BiArrowBack, BiHomeAlt, BiRocket, BiUser } from "react-icons/bi";
+import { useEffect, useState } from "react";
+import {
+  BiArrowBack,
+  BiGridAlt,
+  BiHomeAlt,
+  BiRocket,
+  BiUser,
+} from "react-icons/bi";
 import { Link } from "react-router-dom";
 import "./styles/dashboard.scss";
 type Props = {};
 
 const Dashboard = (props: Props) => {
+  const [isCollapse, setIsCollapse] = useState(false);
+
+  /* handle collapse with localStorage */
+  const handleCollapse = () => {
+    setIsCollapse(!isCollapse);
+    localStorage.setItem("isCollapse", JSON.stringify(!isCollapse));
+  };
+  useEffect(() => {
+    const isCollapse = JSON.parse(
+      localStorage.getItem("isCollapse") || "false"
+    );
+    setIsCollapse(isCollapse);
+  }, []);
+
   return (
     <div className="dashboard font-poppins">
       {/* dashboard sidebar */}
-      <div className="dashboard__sidebar ">
-        <div className="dashboard__sidebar__logo flex items-center justify-between mb-7 p-10">
-          <div className="flex items-center gap-2 text-2xl text-gray-300 font-bold">
-            <BiRocket /> <span>Travel</span>
-          </div>
-          <span className="back text-2xl text-white cursor-pointer ">
-            <BiArrowBack size={25} />
-          </span>
+      <div
+        className={`dashboard__sidebar  ${isCollapse ? "active-sidebar" : ""}`}
+      >
+        {/* active-sidebar */}
+        <div
+          className={`dashboard__sidebar__logo flex items-center justify-between mb-7 ${
+            isCollapse ? "p-2" : "p-10"
+          }`}
+        >
+          {isCollapse ? (
+            <div
+              className="relative grid place-items-center text-white cursor-pointer w-[70px] h-[70px]"
+              onClick={handleCollapse}
+            >
+              <div>
+                <BiGridAlt size={24} />
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="flex items-center gap-2 text-2xl text-gray-300 font-bold">
+                <BiRocket /> <span>Travel</span>
+              </div>
+              <span
+                onClick={handleCollapse}
+                className="back text-2xl text-white cursor-pointer "
+              >
+                <BiArrowBack size={25} />
+              </span>
+            </>
+          )}
         </div>
         <div className="dashboard__sidebar__menu">
           <ul className="dashboard__sidebar__menu__list">
@@ -46,6 +90,12 @@ const Dashboard = (props: Props) => {
       <div className="dashboard__main">
         <div className="dashboard__main__header bg-slate-50 shadow-sm rounded-lg p-3">
           <div className="dashboard__main__header__left flex items-center justify-between">
+            {isCollapse && (
+              <div className="flex items-center gap-2 text-2xl  font-bold">
+                <BiRocket /> <span>Travel</span>
+              </div>
+            )}
+
             <div className="dashboard__main__header__left__search">
               <input
                 type="text"
