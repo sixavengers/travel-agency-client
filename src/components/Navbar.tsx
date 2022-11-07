@@ -6,15 +6,18 @@ import LOGO from "../images/logo.png";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const pathname = window.location.pathname
 
   const handleNav = () => {
     setNav(!nav);
   };
 
   return (
-    <nav className="w-full font-poppins z-50  sticky top-8 bg-transparent h-20 pl-4 pr-8">
+    <nav
+      className={`w-full font-poppins z-50  sticky top-3  ${pathname === '/login' && 'bg-gray-700'} bg-transparent h-20`}
+    >
       <div className="container mx-auto h-full bg-transparent">
-        <div className="flex justify-between items-center w-full lg:px-4  z-50 nav-area left-0">
+        <div className="flex justify-between items-center w-full lg:px-8  z-50 nav-area left-0">
           <div className="logo flex items-center">
             <img
               className="logo h-10 w-20 md:h-auto md:w-auto "
