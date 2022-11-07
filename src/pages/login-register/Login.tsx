@@ -7,9 +7,9 @@ const Login = () => {
   const {
     register,
     formState: { errors },
-    handleSubmit,
   } = useForm();
-  // const onSubmit = data => console.log(data);
+
+  /* Added comment */
 
   return (
     <div className="flex h-screen justify-center items-center font-poppins">
@@ -123,11 +123,15 @@ const Login = () => {
         <div className="mt-5">
           <div className="flex items-center border-2 rounded-3xl p-1">
             <img src={google} alt="" />
-            <button className="pl-16 text-center hover:tracking-widest transition-all">Continue with Google</button>
+            <button className="pl-16 text-center hover:tracking-widest transition-all">
+              Continue with Google
+            </button>
           </div>
           <div className="flex items-center border-2 rounded-3xl p-1 mt-5">
             <img style={{ width: 30, height: 30 }} src={facebook} alt="" />
-            <button className="pl-16 text-center hover:tracking-widest transition-all">Continue with Google</button>
+            <button className="pl-16 text-center hover:tracking-widest transition-all">
+              Continue with Google
+            </button>
           </div>
         </div>
       </div>
@@ -136,6 +140,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-

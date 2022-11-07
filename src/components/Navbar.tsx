@@ -28,7 +28,7 @@ const Navbar = () => {
 
           <div className="justify-between items-center border border-white p-2 rounded search-input w-96 hidden md:flex ">
             <BiSearch className="pr-2 text-white" size={25} />
-            <input 
+            <input
               className="input bg-transparent text-white outline-none w-full"
               type="text"
               name=""
@@ -75,6 +75,9 @@ const Navbar = () => {
             </li>
             <li className="mt-4 mb-4 p-2 px-5 bg-[#F9A51A] rounded cursor-pointer">
               <Link to="/login">Login</Link>
+            </li>
+            <li className="mt-4 mb-4 p-2 px-5  rounded cursor-pointer">
+              <Link to="/dashboard">Dashboard</Link>
             </li>
           </ul>
 
