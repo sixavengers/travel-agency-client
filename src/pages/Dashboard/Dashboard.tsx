@@ -7,6 +7,7 @@ import {
   BiUser,
 } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import ReactTooltip from "react-tooltip";
 import "./styles/dashboard.scss";
 type Props = {};
 
@@ -62,7 +63,10 @@ const Dashboard = (props: Props) => {
         </div>
         <div className="dashboard__sidebar__menu">
           <ul className="dashboard__sidebar__menu__list">
-            <li className="dashboard__sidebar__menu__list__item">
+            <li
+              className="dashboard__sidebar__menu__list__item"
+              data-tip="Home"
+            >
               <Link to="/dashboard">
                 <div className="dashboard__sidebar__menu__list__item__icon">
                   <BiHomeAlt />
@@ -72,7 +76,10 @@ const Dashboard = (props: Props) => {
                 </span>
               </Link>
             </li>
-            <li className="dashboard__sidebar__menu__list__item">
+            <li
+              className="dashboard__sidebar__menu__list__item"
+              data-tip="Profile"
+            >
               <Link to="/dashboard">
                 <div className="dashboard__sidebar__menu__list__item__icon">
                   <BiUser />
@@ -136,6 +143,12 @@ const Dashboard = (props: Props) => {
         </div>
       </div>
       {/* end */}
+      {isCollapse && (
+        <ReactTooltip
+          backgroundColor="#487df1"
+          className="shadow border backdrop-blur-sm"
+        />
+      )}
     </div>
   );
 };
