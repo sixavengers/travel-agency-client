@@ -6,15 +6,18 @@ import LOGO from "../images/logo.png";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const pathname = window.location.pathname
 
   const handleNav = () => {
     setNav(!nav);
   };
 
   return (
-    <nav className="w-full font-poppins z-50  sticky top-8 bg-transparent h-20 pl-4 pr-8">
+    <nav
+      className={`w-full font-poppins z-50  sticky top-3  ${pathname === '/login' && 'bg-gray-700'} bg-transparent h-20`}
+    >
       <div className="container mx-auto h-full bg-transparent">
-        <div className="flex justify-between items-center w-full lg:px-4  z-50 nav-area left-0">
+        <div className="flex justify-between items-center w-full lg:px-8  z-50 nav-area left-0">
           <div className="logo flex items-center">
             <img
               className="logo h-10 w-20 md:h-auto md:w-auto "
@@ -25,7 +28,7 @@ const Navbar = () => {
 
           <div className="justify-between items-center border border-white p-2 rounded search-input w-96 hidden md:flex ">
             <BiSearch className="pr-2 text-white" size={25} />
-            <input 
+            <input
               className="input bg-transparent text-white outline-none w-full"
               type="text"
               name=""
@@ -72,6 +75,9 @@ const Navbar = () => {
             </li>
             <li className="mt-4 mb-4 p-2 px-5 bg-[#F9A51A] rounded cursor-pointer">
               <Link to="/login">Login</Link>
+            </li>
+            <li className="mt-4 mb-4 p-2 px-5  rounded cursor-pointer">
+              <Link to="/dashboard">Dashboard</Link>
             </li>
           </ul>
 
