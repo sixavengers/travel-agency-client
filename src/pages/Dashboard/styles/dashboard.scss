@@ -17,7 +17,7 @@ $sidebar-color-quaternary: #568bf2;
     left: 0%;
     top: 0%;
     z-index: 1;
-    width: 340px;
+    width: 300px;
     height: 100%;
     border-radius: 0rem 2rem 2rem 0rem;
     transition: all 0.3s ease;
@@ -132,9 +132,9 @@ $sidebar-color-quaternary: #568bf2;
 
   .dashboard__main {
     position: relative;
-    left: 340px;
+    left: 300px;
     top: 0%;
-    width: calc(100% - 340px);
+    width: calc(100% - 300px);
     height: 100%;
     padding: 1rem;
     transition: all 0.3s ease;
