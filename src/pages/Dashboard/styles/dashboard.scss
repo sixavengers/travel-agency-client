@@ -55,6 +55,7 @@ $sidebar-color-quaternary: #568bf2;
           cursor: pointer;
           transition: background 0.3s ease-in-out;
           border-radius: 10px;
+
           &:hover {
             background: linear-gradient(
               60deg,
@@ -79,7 +80,26 @@ $sidebar-color-quaternary: #568bf2;
             .dashboard__sidebar__menu__list__item__text {
               transform: scale(1);
               transition: all 0.3s ease;
+              font-size: 1rem;
             }
+          }
+        }
+        /* css for submenu */
+        .dashboard__sidebar__menu__list__item.submenu {
+          height: auto !important;
+          .dropdown {
+            margin-top: 1rem;
+            border-radius: 10px;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.3s ease;
+            display: none;
+          }
+          &:hover .dropdown {
+            transform: scaleY(1);
+            min-height: 150px;
+            display: block;
+            transition: transform 0.3s ease;
           }
         }
       }

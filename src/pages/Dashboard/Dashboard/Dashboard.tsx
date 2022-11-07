@@ -1,14 +1,9 @@
 import { useEffect, useState } from "react";
-import {
-  BiArrowBack,
-  BiGridAlt,
-  BiHomeAlt,
-  BiRocket,
-  BiUser,
-} from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { BiArrowBack, BiGridAlt, BiRocket } from "react-icons/bi";
+import { Outlet } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
-import "./styles/dashboard.scss";
+import "../styles/dashboard.scss";
+import DashboardMenus from "./DashboardMenus";
 type Props = {};
 
 const Dashboard = (props: Props) => {
@@ -62,34 +57,7 @@ const Dashboard = (props: Props) => {
           )}
         </div>
         <div className="dashboard__sidebar__menu">
-          <ul className="dashboard__sidebar__menu__list">
-            <li
-              className="dashboard__sidebar__menu__list__item"
-              data-tip="Home"
-            >
-              <Link to="/dashboard">
-                <div className="dashboard__sidebar__menu__list__item__icon">
-                  <BiHomeAlt />
-                </div>
-                <span className="dashboard__sidebar__menu__list__item__text">
-                  Home
-                </span>
-              </Link>
-            </li>
-            <li
-              className="dashboard__sidebar__menu__list__item"
-              data-tip="Profile"
-            >
-              <Link to="/dashboard">
-                <div className="dashboard__sidebar__menu__list__item__icon">
-                  <BiUser />
-                </div>
-                <span className="dashboard__sidebar__menu__list__item__text">
-                  Profile
-                </span>
-              </Link>
-            </li>
-          </ul>
+          <DashboardMenus />
         </div>
       </div>
 
@@ -131,15 +99,8 @@ const Dashboard = (props: Props) => {
           </div>
         </div>
         {/* content goes here */}
-        <div className="dashboard__main__content py-10">
-          <div className="dashboard__main__content__header ">
-            <h1 className="dashboard__main__content__header__title">
-              Dashboard
-            </h1>
-          </div>
-          <div className="dashboard__main__content__body">
-            <h1 className="text-2xl font-bold">Welcome to the dashboard </h1>
-          </div>
+        <div className="dashboard__main__content py-5">
+          <Outlet />
         </div>
       </div>
       {/* end */}
