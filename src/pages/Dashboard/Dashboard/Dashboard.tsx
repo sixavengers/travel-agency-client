@@ -64,7 +64,7 @@ const Dashboard = (props: Props) => {
       {/* dashboard main content */}
       <div className="dashboard__main">
         <div className="dashboard__main__header bg-slate-50 shadow-sm rounded-lg p-3">
-          <div className="dashboard__main__header__left flex items-center justify-between">
+          <div className="dashboard__main__header__left flex flex-col sm:flex-row items-center justify-between">
             {isCollapse && (
               <div className="flex items-center gap-2 text-2xl  font-bold">
                 <BiRocket /> <span>Travel</span>
