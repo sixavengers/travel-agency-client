@@ -2,13 +2,21 @@ import React from 'react'
 import { AiOutlineSwap } from 'react-icons/ai'
 import PackagesCard from './PackagesCard';
 import SidebarFilter from './SidebarFilter';
+import { FiFilter } from "react-icons/fi";
+
+//tsrafce
+
 type Props = {}
 
 const Packages = (props: Props) => {
 
-    return (
-        <div className='my-5 px-3'>
 
+    return (
+        <div className='my-5 px-3 container mx-auto'>
+            <button className='bg-[#f9a51a] font-poppins text-white py-1.5 px-4 text-md rounded-md shadow-md fixed bottom-5 left-[50%] -translate-x-2/4 z-10 flex items-center lg:hidden'>
+                <FiFilter className='font-bold mr-1'/>
+                Filter
+            </button>
             {/*============================== 
                 *Top search bar section start
             ===============================*/}
@@ -55,6 +63,7 @@ const Packages = (props: Props) => {
                     <PackagesCard />
                 </div>
             </section>
+
         </div>
     )
 }
