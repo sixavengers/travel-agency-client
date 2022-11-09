@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import facebook from "../../images/facebookicon.png";
 import google from "../../images/googleicon.png";
 
+
 const Login = () => {
   const {
     register,
@@ -12,21 +13,21 @@ const Login = () => {
   /* Added comment */
 
   return (
-    <div className="flex h-screen justify-center items-center font-poppins">
+    <div className="flex h-screen justify-center items-center p-5 font-poppins">
       <div>
-        <div className="sm:w-86 lg:w-96 border-2 p-5 rounded">
+        <div className="sm:w-86 lg:w-96 border-2 p-7 rounded">
           <div className="card-body">
             <h2 className="text-2xl font-bold mb-5">Login</h2>
 
             <form>
-              <div className="form-control w-full max-w-xs">
+              <div className="form-control w-full sm:max-w-xs">
                 <label className="label">
                   <span className="label-text ">Username or Email</span>
                 </label>
                 <input
                   type="email"
                   placeholder=""
-                  className="border 2xl:p-2 mt-2 rounded outline-none w-full bg-[#F2F2F2]"
+                  className="border 2xl:p-2 p-2 my-1  mt-2 rounded outline-none w-full bg-[#F2F2F2]"
                   {...register("email", {
                     required: {
                       value: true,
@@ -48,14 +49,14 @@ const Login = () => {
                 </label>
               </div>
 
-              <div className="form-control w-full max-w-xs mt-5">
+              <div className="form-control w-full sm:max-w-xs mt-5 ">
                 <label className="label">
                   <span className="label-text">password</span>
                 </label>
                 <input
                   type="password"
                   placeholder=""
-                  className="border 2xl:p-2 p-2  my-1  mt-2 rounded outline-none w-full bg-[#F2F2F2]"
+                  className="border 2xl:p-2 p-2 my-1  mt-2 rounded outline-none w-full bg-[#F2F2F2]"
                   {...register("password", {
                     required: {
                       value: true,
