@@ -27,10 +27,11 @@ window.addEventListener('scroll', changeBackground);
 
   return (
     <nav
+
       className={`w-full font-poppins z-50 pl-5 pr-5  sticky top-3  ${
         pathname === "/login" && "bg-gray-700"
-      } bg-transparent h-20`}
-    >
+      } bg-transparent h-20`} >
+
 
       {/* <nav
       className={navbar?"w-full font-poppins z-50 pl-5 pr-5  sticky top-3 md:bg-gray-700 bg-gray-700":"w-full font-poppins z-50 pl-5 pr-5  sticky top-3 bg-transparent"}

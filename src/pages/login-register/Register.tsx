@@ -12,7 +12,7 @@ const Register = () => {
   return (
     <div className="flex h-screen justify-center items-center mt-20 font-poppins">
       <div>
-        <div className="sm:w-86 lg:w-96 border-2 p-5 rounded">
+        <div className="sm:w-86 lg:w-96 border-2 p-7 rounded">
           <div className="card-body">
             <h2 className="text-2xl font-bold mb-5">Create an account</h2>
 

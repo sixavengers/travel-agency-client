@@ -129,8 +129,9 @@ const Home = (props: Props) => {
     </div>
   );
 }
-
 export default Home
+
+
 // type Props = {}
 
 // const Home = ():Props => {
