@@ -1,6 +1,6 @@
-import { BiHomeAlt, BiPackage, BiPlus, BiUser } from "react-icons/bi";
+import { BiPackage, BiPlus, BiUser } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";
-import { IoMdSettings } from "react-icons/io";
+import { IoMdSettings, IoMdSpeedometer } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
 
 type Props = {};
@@ -15,9 +15,9 @@ const DashboardMenus = (props: Props) => {
   /* All Menus */
   const menus = [
     {
-      name: "Home",
+      name: "Dashboard",
       path: "/dashboard",
-      icon: <BiHomeAlt />,
+      icon: <IoMdSpeedometer />,
     },
     {
       name: "Add Package",
@@ -56,7 +56,7 @@ const DashboardMenus = (props: Props) => {
           className={`dashboard__sidebar__menu__list__item ${
             isActive(menu?.path) && "bg-[#5a8dfa6c]"
           }`}
-          data-tip="Home"
+          data-tip={menu?.name}
         >
           <Link to={menu?.path}>
             <div className="dashboard__sidebar__menu__list__item__icon">
