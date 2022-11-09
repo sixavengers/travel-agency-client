@@ -1,5 +1,5 @@
 import { BiEditAlt, BiPlus, BiTrashAlt } from "react-icons/bi";
-import { FaEye, FaUsers } from "react-icons/fa";
+import { FaEye, FaPen, FaUsers } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 type Props = {};
@@ -51,6 +51,7 @@ const Users = (props: Props) => {
                   <th className="p-2">Name</th>
                   <th className="p-2">Email</th>
                   <th className="p-2">Role</th>
+                  <th className="p-2">Status</th>
                   <th className="p-2 text-center">Details</th>
                   <th className="p-2">Actions</th>
                 </tr>
@@ -64,9 +65,24 @@ const Users = (props: Props) => {
                     </a>
                   </td>
                   <td className="p-2">
-                    <span className="bg-green-500 text-white px-2 py-1 rounded">
-                      Admin
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="bg-green-100 text-green-600 px-2 rounded-full">
+                        Admin
+                      </span>
+                      <span className="text-green-500 cursor-pointer">
+                        <FaPen />
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="flex items-center gap-2">
+                      <span className="px-2  bg-blue-100 text-blue-600 rounded-full">
+                        active
+                      </span>
+                      <span className="text-blue-500 cursor-pointer">
+                        <FaPen />
+                      </span>
+                    </div>
                   </td>
                   <td className="text-center">
                     <button className="bg-blue-500 p-2 rounded-full text-white">
