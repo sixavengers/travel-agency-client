@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BiArrowBack, BiGridAlt, BiRocket } from "react-icons/bi";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
 
 import "../styles/dashboard.scss";
@@ -45,9 +45,12 @@ const Dashboard = (props: Props) => {
             </div>
           ) : (
             <>
-              <div className="flex items-center gap-2 text-2xl text-gray-300 font-bold">
+              <Link
+                to="/"
+                className="flex items-center gap-2 text-2xl text-gray-300 font-bold"
+              >
                 <BiRocket /> <span>Travel</span>
-              </div>
+              </Link>
               <span
                 onClick={handleCollapse}
                 className="back text-2xl text-white cursor-pointer "
@@ -67,9 +70,12 @@ const Dashboard = (props: Props) => {
         <div className="dashboard__main__header bg-slate-50 shadow-sm rounded-lg p-3">
           <div className="dashboard__main__header__left flex flex-col sm:flex-row items-center justify-between">
             {isCollapse && (
-              <div className="flex items-center gap-2 text-2xl  font-bold">
+              <Link
+                to="/"
+                className="flex items-center gap-2 text-2xl  font-bold"
+              >
                 <BiRocket /> <span>Travel</span>
-              </div>
+              </Link>
             )}
 
             <div className="dashboard__main__header__left__search">
