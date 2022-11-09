@@ -73,7 +73,7 @@ const SpecialBarChart = (props: Props) => {
   };
 
   return (
-    <div className="p-6 bg-white">
+    <div className="p-6 bg-white shadow">
       <ReactApexChart
         options={options as any}
         series={series}

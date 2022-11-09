@@ -1,5 +1,6 @@
 import CountUp from "react-countup";
-import { BiIdCard } from "react-icons/bi";
+import { BiBookAlt, BiPackage, BiServer, BiShapePolygon } from "react-icons/bi";
+import { FaUsers } from "react-icons/fa";
 import PieChart from "./PieChart";
 import SpecialBarChart from "./SpecialBarChart";
 import UsersChart from "./UsersChart";
@@ -19,14 +20,28 @@ const Overview = (props: Props) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 bg-gray-50 p-5 my-5">
         {/* single state card */}
         <div className="card  border p-5 rounded-lg relative bg-white">
-          <div className="icon absolute right-6 top-2/4 -translate-y-2/4 text-gray-100">
-            <BiIdCard size={100} />
+          <div className="icon absolute right-6 top-2/4 -translate-y-2/4 text-green-50">
+            <BiPackage size={100} />
+          </div>
+          <div className="info">
+            <h2 className="text-4xl font-bold">
+              <CountUp end={10} duration={2} />
+            </h2>
+            <h3 className="text-md text-gray-600 font-bold">Packages</h3>
+            <p className="text-xs text-gray-500">View your profile</p>
+          </div>
+        </div>
+        {/* end */}
+        {/* single state card */}
+        <div className="card  border p-5 rounded-lg relative bg-white">
+          <div className="icon absolute right-6 top-2/4 -translate-y-2/4 text-orange-100">
+            <FaUsers size={100} />
           </div>
           <div className="info">
             <h2 className="text-4xl font-bold">
               <CountUp end={100} duration={2} />
             </h2>
-            <h3 className="text-md text-gray-600 font-bold">Overview</h3>
+            <h3 className="text-md text-gray-600 font-bold">Register Users</h3>
             <p className="text-xs text-gray-500">View your profile</p>
           </div>
         </div>
@@ -34,59 +49,54 @@ const Overview = (props: Props) => {
         {/* single state card */}
         <div className="card  border p-5 rounded-lg relative bg-white">
           <div className="icon absolute right-6 top-2/4 -translate-y-2/4 text-gray-100">
-            <BiIdCard size={100} />
+            <BiShapePolygon size={100} />
           </div>
           <div className="info">
             <h2 className="text-4xl font-bold">
-              <CountUp end={100} duration={2} />
+              <CountUp end={40} duration={2} />
             </h2>
-            <h3 className="text-md text-gray-600 font-bold">Overview</h3>
+            <h3 className="text-md text-gray-600 font-bold">
+              Registered Drivers
+            </h3>
             <p className="text-xs text-gray-500">View your profile</p>
           </div>
         </div>
         {/* end */}
         {/* single state card */}
         <div className="card  border p-5 rounded-lg relative bg-white">
-          <div className="icon absolute right-6 top-2/4 -translate-y-2/4 text-gray-100">
-            <BiIdCard size={100} />
+          <div className="icon absolute right-6 top-2/4 -translate-y-2/4 text-blue-100">
+            <BiBookAlt size={100} />
           </div>
           <div className="info">
             <h2 className="text-4xl font-bold">
-              <CountUp end={100} duration={2} />
+              <CountUp end={7} duration={2} />
             </h2>
-            <h3 className="text-md text-gray-600 font-bold">Overview</h3>
+            <h3 className="text-md text-gray-600 font-bold">Uploaded Blogs</h3>
             <p className="text-xs text-gray-500">View your profile</p>
           </div>
         </div>
         {/* end */}
         {/* single state card */}
         <div className="card  border p-5 rounded-lg relative bg-white">
-          <div className="icon absolute right-6 top-2/4 -translate-y-2/4 text-gray-100">
-            <BiIdCard size={100} />
+          <div className="icon absolute right-6 top-2/4 -translate-y-2/4 text-fuchsia-100">
+            <BiServer size={100} />
           </div>
           <div className="info">
             <h2 className="text-4xl font-bold">
-              <CountUp end={100} duration={2} />
+              <CountUp end={65} duration={2} />
             </h2>
             <h3 className="text-md text-gray-600 font-bold">Overview</h3>
             <p className="text-xs text-gray-500">View your profile</p>
           </div>
         </div>
         {/* end */}
-        {/* single state card */}
-        <div className="card  border p-5 rounded-lg relative bg-white">
-          <div className="icon absolute right-6 top-2/4 -translate-y-2/4 text-gray-100">
-            <BiIdCard size={100} />
-          </div>
-          <div className="info">
-            <h2 className="text-4xl font-bold">
-              <CountUp end={100} duration={2} />
-            </h2>
-            <h3 className="text-md text-gray-600 font-bold">Overview</h3>
-            <p className="text-xs text-gray-500">View your profile</p>
-          </div>
+      </div>
+
+      {/* recent packages */}
+      <div className="my-4 p-4 bg-gray-50 rounded">
+        <div className="bg-white p-5">
+          <h3 className="text-lg font-bold my-2">Recent Packages</h3>
         </div>
-        {/* end */}
       </div>
 
       {/* charts visualizations */}

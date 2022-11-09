@@ -18,7 +18,7 @@ const UsersChart = (props: Props) => {
   ];
 
   return (
-    <div className="bg-white p-3">
+    <div className="bg-white p-3 shadow">
       <label htmlFor="" className="my-3">
         Users Visualization
       </label>
