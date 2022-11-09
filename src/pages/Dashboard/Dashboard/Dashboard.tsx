@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { BiArrowBack, BiGridAlt, BiRocket } from "react-icons/bi";
 import { Link, Outlet } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
-
+import LOGO from "../../../images/logo.png";
 import "../styles/dashboard.scss";
 import "../styles/packages.scss";
 import DashboardMenus from "./DashboardMenus";
@@ -50,7 +50,8 @@ const Dashboard = (props: Props) => {
                 to="/"
                 className="flex items-center gap-2 text-2xl text-gray-300 font-bold"
               >
-                <BiRocket /> <span>Travel</span>
+                {/* <BiRocket /> <span>Travel</span> */}
+                <img src={LOGO} alt="logo" width={110} />
               </Link>
               <span
                 onClick={handleCollapse}
