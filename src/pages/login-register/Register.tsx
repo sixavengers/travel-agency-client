@@ -7,26 +7,24 @@ const Register = () => {
   const {
     register,
     formState: { errors },
-    handleSubmit,
   } = useForm();
-  // const onSubmit = data => console.log(data);
 
   return (
-    <div className="flex h-screen justify-center items-center">
+    <div className="flex h-screen justify-center items-center mt-20 font-poppins">
       <div>
         <div className="sm:w-86 lg:w-96 border-2 p-5 rounded">
           <div className="card-body">
             <h2 className="text-2xl font-bold mb-5">Create an account</h2>
 
             <form>
-              <div className="form-control w-full max-w-xs border-b border-grey-dark">
+              <div className="form-control w-full max-w-xs rounded">
                 <label className="label">
-                  <span className="label-text">First Name</span>
+                  <span className="label-text">Full Name</span>
                 </label>
                 <input
                   type="text"
                   placeholder=""
-                  className="input input-bordered w-full max-w-xs"
+                  className="input max-w-xs 2xl:p-2 p-2 my-1 mt-2 rounded outline-none w-full bg-[#F2F2F2]"
                   {...register("name", {
                     required: {
                       value: true,
@@ -41,36 +39,14 @@ const Register = () => {
                 </label>
               </div>
 
-              <div className="form-control w-full max-w-xs border-b border-grey-dark mt-5">
-                <label className="label">
-                  <span className="label-text">Last Name</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder=""
-                  className="input input-bordered w-full max-w-xs"
-                  {...register("name", {
-                    required: {
-                      value: true,
-                      message: "Name is Required",
-                    },
-                  })}
-                />
-                <label className="label">
-                  {errors.email?.type === "required" && (
-                    <span className="label-text-alt text-red-500">{}</span>
-                  )}
-                </label>
-              </div>
-
-              <div className="form-control w-full max-w-xs border-b border-grey-dark mt-5">
+              <div className="form-control w-full max-w-xs mt-4 rounded">
                 <label className="label">
                   <span className="label-text ">Username or Email</span>
                 </label>
                 <input
                   type="email"
                   placeholder=""
-                  className="input input-bordered w-full max-w-xs"
+                  className="input max-w-xs 2xl:p-2 p-2 my-1 mt-2 rounded outline-none w-full bg-[#F2F2F2]"
                   {...register("email", {
                     required: {
                       value: true,
@@ -92,14 +68,14 @@ const Register = () => {
                 </label>
               </div>
 
-              <div className="form-control w-full max-w-xs border-b border-grey-dark mt-5">
+              <div className="form-control w-full max-w-xs mt-3 rounded">
                 <label className="label">
                   <span className="label-text">password</span>
                 </label>
                 <input
                   type="password"
                   placeholder=""
-                  className="input input-bordered w-full max-w-xs"
+                  className="input max-w-xs 2xl:p-2 p-2 my-1 mt-2 rounded outline-none w-full bg-[#F2F2F2]"
                   {...register("password", {
                     required: {
                       value: true,
@@ -121,14 +97,14 @@ const Register = () => {
                 </label>
               </div>
 
-              <div className="form-control w-full max-w-xs border-b border-grey-dark mt-5">
+              <div className="form-control w-full max-w-xs mt-3">
                 <label className="label">
                   <span className="label-text">Confirm Password</span>
                 </label>
                 <input
                   type="password"
                   placeholder=""
-                  className="input input-bordered w-full max-w-xs"
+                  className="input max-w-xs 2xl:p-2 p-2 my-1 rounded outline-none w-full bg-[#F2F2F2]"
                   {...register("password", {
                     required: {
                       value: true,
@@ -150,9 +126,9 @@ const Register = () => {
                 </label>
               </div>
 
-              <div className="bg-[#F9A51A] p-2 mt-5">
+              <div className="bg-[#F9A51A] p-2 mt-5 rounded">
                 <input
-                  className="btn w-full max-w-xs text-red"
+                  className="btn w-full max-w-xs cursor-pointer hover:tracking-widest transition-all"
                   type="Submit"
                   value="create an account"
                 />

@@ -1,0 +1,146 @@
+/* dashboard design here */
+
+/* dashboard colors variables */
+
+$dashboard-color: #fff;
+$sidebar-color-primary: #2e4163;
+$sidebar-color-secondary: #456396;
+$sidebar-color-tertiary: #487df1;
+$sidebar-color-quaternary: #568bf2;
+
+.dashboard {
+  position: relative;
+  width: 100%;
+
+  .dashboard__sidebar {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    z-index: 1;
+    width: 300px;
+    height: 100%;
+    border-radius: 0rem 2rem 2rem 0rem;
+    transition: all 0.3s ease;
+    background: linear-gradient(
+      360deg,
+      $sidebar-color-primary,
+      $sidebar-color-secondary
+    );
+
+    .dashboard__sidebar__menu {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      .dashboard__sidebar__menu__list {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+
+        .dashboard__sidebar__menu__list__item {
+          position: relative;
+          width: 100%;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          list-style: none;
+          color: $dashboard-color;
+          font-size: 1.1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.3s ease-in-out;
+          border-radius: 10px;
+
+          &:hover {
+            background: linear-gradient(
+              60deg,
+              $sidebar-color-tertiary,
+              $sidebar-color-quaternary
+            );
+          }
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+            width: 100%;
+            .dashboard__sidebar__menu__list__item__icon {
+              height: 40px;
+              padding-left: 1.5rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1.3rem;
+            }
+            .dashboard__sidebar__menu__list__item__text {
+              transform: scale(1);
+              transition: all 0.3s ease;
+              font-size: 1rem;
+            }
+          }
+        }
+        /* css for submenu */
+        .dashboard__sidebar__menu__list__item.submenu {
+          height: auto !important;
+          .dropdown {
+            margin-top: 1rem;
+            border-radius: 10px;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.3s ease;
+            display: none;
+          }
+          &:hover .dropdown {
+            transform: scaleY(1);
+            min-height: 150px;
+            display: block;
+            transition: transform 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+
+  /* active dashboard design */
+  .dashboard__sidebar.active-sidebar {
+    width: 70px;
+    .dashboard__sidebar__menu__list__item {
+      width: 70px;
+
+      a {
+        position: relative;
+        .dashboard__sidebar__menu__list__item__icon {
+          width: 70px;
+          height: 70px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-left: 0rem !important;
+        }
+        .dashboard__sidebar__menu__list__item__text {
+          transform: scale(0) !important;
+          display: none;
+        }
+      }
+    }
+  }
+
+  .dashboard__main {
+    position: relative;
+    left: 300px;
+    top: 0%;
+    width: calc(100% - 300px);
+    height: 100%;
+    padding: 1rem;
+    transition: all 0.3s ease;
+  }
+  .dashboard__sidebar.active-sidebar ~ .dashboard__main {
+    width: calc(100% - 70px);
+    left: 70px;
+  }
+}
