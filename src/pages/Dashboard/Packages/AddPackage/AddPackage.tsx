@@ -14,7 +14,7 @@ const AddPackage = (props: Props) => {
       <div className="p-4">
         <div className="title flex items-center justify-between">
           <h1 className="text-2xl font-bold">Add Package</h1>
-          <Link to="/dashboard/packages">
+          <Link to="/dashboard/package/list">
             <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
               Packages Lists
             </button>
@@ -31,7 +31,7 @@ const AddPackage = (props: Props) => {
                 Name
               </label>
               <input
-                className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]"
+                className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#f8f8f8]"
                 id="name"
                 type="text"
                 placeholder="Name"
@@ -47,7 +47,7 @@ const AddPackage = (props: Props) => {
                   Price
                 </label>
                 <input
-                  className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]"
+                  className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#f8f8f8]"
                   id="price"
                   type="text"
                   placeholder="Price"
@@ -61,7 +61,7 @@ const AddPackage = (props: Props) => {
                   Origin
                 </label>
                 <input
-                  className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]"
+                  className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#f8f8f8]"
                   id="Origin"
                   type="text"
                   placeholder="Origin"
@@ -75,7 +75,7 @@ const AddPackage = (props: Props) => {
                   Destination
                 </label>
                 <input
-                  className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]"
+                  className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#f8f8f8]"
                   id="Destination"
                   type="text"
                   placeholder="Destination"
@@ -89,7 +89,7 @@ const AddPackage = (props: Props) => {
                 >
                   Packages Classes
                 </label>
-                <select className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]">
+                <select className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#f8f8f8]">
                   <option value="Luxury">Luxury</option>
                   <option value="Mid Range">Mid Range</option>
                   <option value="Budget">Budget</option>
@@ -102,7 +102,7 @@ const AddPackage = (props: Props) => {
                 >
                   Packages Types
                 </label>
-                <select className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]">
+                <select className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#f8f8f8]">
                   <option value="Group Tour">Group Tour</option>
                   <option value="Private Tour">Private Tour</option>
                   <option value="Couple Tour">Couple Tour</option>
@@ -125,7 +125,7 @@ const AddPackage = (props: Props) => {
                   onChange={(date) => setStartDate(date)}
                   customInput={
                     <input
-                      className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]"
+                      className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#f8f8f8]"
                       id="startDate"
                       type="text"
                       placeholder="Start Date"
@@ -146,7 +146,7 @@ const AddPackage = (props: Props) => {
                   onChange={(date) => setReturnDate(date)}
                   customInput={
                     <input
-                      className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]"
+                      className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#f8f8f8]"
                       id="endDate"
                       type="text"
                       placeholder="End Date"
@@ -163,7 +163,7 @@ const AddPackage = (props: Props) => {
                   Duration
                 </label>
                 <input
-                  className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]"
+                  className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#f8f8f8]"
                   id="duration"
                   type="text"
                   placeholder="Duration"
@@ -178,7 +178,7 @@ const AddPackage = (props: Props) => {
                   Max Group Size
                 </label>
                 <input
-                  className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]"
+                  className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#f8f8f8]"
                   id="maxGroupSize"
                   type="text"
                   placeholder="Max Group Size"
@@ -191,7 +191,7 @@ const AddPackage = (props: Props) => {
                 >
                   Difficulty
                 </label>
-                <select className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]">
+                <select className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#f8f8f8]">
                   <option value="Easy">Easy</option>
                   <option value="Medium">Medium</option>
                   <option value="Hard">Hard</option>
@@ -306,7 +306,7 @@ const AddPackage = (props: Props) => {
                 Description
               </label>
               <textarea
-                className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]"
+                className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#f8f8f8]"
                 id="description"
                 rows={5}
                 placeholder="Description"
@@ -320,7 +320,7 @@ const AddPackage = (props: Props) => {
                 Image
               </label>
               <input
-                className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#F2F2F2]"
+                className="border 2xl:p-4 p-2  my-1 rounded outline-none w-full bg-[#f8f8f8]"
                 id="image"
                 type="file"
                 placeholder="Image"

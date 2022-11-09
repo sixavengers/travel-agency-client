@@ -1,12 +1,19 @@
 import { BiHomeAlt, BiPackage, BiPlus, BiUser } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 type Props = {};
 
 const DashboardMenus = (props: Props) => {
+  const { pathname } = useLocation();
+
   return (
     <ul className="dashboard__sidebar__menu__list font-montserrat">
-      <li className="dashboard__sidebar__menu__list__item" data-tip="Home">
+      <li
+        className={`dashboard__sidebar__menu__list__item ${
+          pathname === "/dashboard" && "bg-[#5a8dfa6c]"
+        }`}
+        data-tip="Home"
+      >
         <Link to="/dashboard">
           <div className="dashboard__sidebar__menu__list__item__icon">
             <BiHomeAlt />
@@ -18,7 +25,9 @@ const DashboardMenus = (props: Props) => {
       </li>
 
       <li
-        className="dashboard__sidebar__menu__list__item "
+        className={`dashboard__sidebar__menu__list__item ${
+          pathname === "/dashboard/package/add" && "bg-[#5a8dfa6c]"
+        }`}
         data-tip="Add Package"
       >
         <Link to="/dashboard/package/add">
@@ -32,7 +41,9 @@ const DashboardMenus = (props: Props) => {
       </li>
 
       <li
-        className="dashboard__sidebar__menu__list__item "
+        className={`dashboard__sidebar__menu__list__item ${
+          pathname === "/dashboard/package/list" && "bg-[#5a8dfa6c]"
+        }`}
         data-tip="Manage Package"
       >
         <Link to="/dashboard/package/list">
@@ -45,7 +56,12 @@ const DashboardMenus = (props: Props) => {
         </Link>
       </li>
 
-      <li className="dashboard__sidebar__menu__list__item" data-tip="Profile">
+      <li
+        className={`dashboard__sidebar__menu__list__item ${
+          pathname === "/dashboard/users" && "bg-[#5a8dfa6c]"
+        }`}
+        data-tip="Users"
+      >
         <Link to="/dashboard/users">
           <div className="dashboard__sidebar__menu__list__item__icon">
             <FaUsers />
@@ -55,7 +71,12 @@ const DashboardMenus = (props: Props) => {
           </span>
         </Link>
       </li>
-      <li className="dashboard__sidebar__menu__list__item" data-tip="Profile">
+      <li
+        className={`dashboard__sidebar__menu__list__item ${
+          pathname === "/dashboard/profile" && "bg-[#5a8dfa6c]"
+        }`}
+        data-tip="Profile"
+      >
         <Link to="/dashboard/profile">
           <div className="dashboard__sidebar__menu__list__item__icon">
             <BiUser />

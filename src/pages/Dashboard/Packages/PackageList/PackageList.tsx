@@ -5,6 +5,7 @@ import {
   BiPlus,
   BiTrashAlt,
 } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -13,9 +14,12 @@ const PackageList = (props: Props) => {
     <div className="font-montserrat">
       <div className="title flex items-center justify-between my-5">
         <h1 className="text-2xl font-bold">Packages</h1>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center gap-2">
+        <Link
+          to="/dashboard/package/add"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center gap-2"
+        >
           <BiPlus /> Add Package
-        </button>
+        </Link>
       </div>
 
       <div className="p-5 my-5 bg-white shadow border rounded">
