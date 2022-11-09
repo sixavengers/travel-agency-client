@@ -4,6 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
 
 import "../styles/dashboard.scss";
+import "../styles/packages.scss";
 import DashboardMenus from "./DashboardMenus";
 type Props = {};
 
@@ -67,7 +68,7 @@ const Dashboard = (props: Props) => {
 
       {/* dashboard main content */}
       <div className="dashboard__main">
-        <div className="dashboard__main__header bg-slate-50 shadow-sm rounded-lg p-3">
+        <div className="dashboard__main__header bg-slate-50 shadow-sm rounded-lg p-3 sticky top-1">
           <div className="dashboard__main__header__left flex flex-col sm:flex-row items-center justify-between">
             {isCollapse && (
               <Link
