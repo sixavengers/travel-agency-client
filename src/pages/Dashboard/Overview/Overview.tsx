@@ -1,5 +1,8 @@
 import CountUp from "react-countup";
 import { BiIdCard } from "react-icons/bi";
+import PieChart from "./PieChart";
+import SpecialBarChart from "./SpecialBarChart";
+import UsersChart from "./UsersChart";
 type Props = {};
 
 const Overview = (props: Props) => {
@@ -84,6 +87,15 @@ const Overview = (props: Props) => {
           </div>
         </div>
         {/* end */}
+      </div>
+
+      {/* charts visualizations */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 bg-gray-50 my-5 p-5 gap-5">
+        <UsersChart />
+        <PieChart />
+        <div className="col-span-2">
+          <SpecialBarChart />
+        </div>
       </div>
     </div>
   );
