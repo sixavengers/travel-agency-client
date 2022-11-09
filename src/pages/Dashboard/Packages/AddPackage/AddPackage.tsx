@@ -10,7 +10,7 @@ const AddPackage = (props: Props) => {
   const [returnDate, setReturnDate] = useState<any>("");
 
   return (
-    <div>
+    <div className="font-roboto">
       <div className="p-4">
         <div className="title flex items-center justify-between">
           <h1 className="text-2xl font-bold">Add Package</h1>
