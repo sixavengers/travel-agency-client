@@ -67,7 +67,7 @@ const Dashboard = (props: Props) => {
       </div>
 
       {/* dashboard main content */}
-      <div className="dashboard__main">
+      <div className="dashboard__main ">
         <div className="dashboard__main__header bg-slate-50 shadow-sm rounded-lg p-3 sticky top-1 z-40">
           <div className="dashboard__main__header__left flex flex-col sm:flex-row items-center justify-between">
             {isCollapse && (
