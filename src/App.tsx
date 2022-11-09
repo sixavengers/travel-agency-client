@@ -10,6 +10,7 @@ import Profile from "./pages/Dashboard/Profile/Profile";
 import Users from "./pages/Dashboard/Users/Users";
 import Login from "./pages/login-register/Login";
 import Register from "./pages/login-register/Register";
+import Packages from "./pages/packeges/Packages";
 
 import "./utilities/CustomClass.css";
 function App() {

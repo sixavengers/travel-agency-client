@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BiArrowBack, BiGridAlt, BiRocket } from "react-icons/bi";
 import { Outlet } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
+
 import "../styles/dashboard.scss";
 import DashboardMenus from "./DashboardMenus";
 type Props = {};
