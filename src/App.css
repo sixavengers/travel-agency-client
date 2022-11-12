@@ -31,3 +31,7 @@
 .search-input input::placeholder {
   color: #ffffff;
 }
+
+.bannerimg{
+  border-radius: 8%
+}

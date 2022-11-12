@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { Link } from "react-router-dom";
@@ -8,34 +8,33 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [navbar, setNavbar] = useState(false)
 
+
+
+
   const pathname = window.location.pathname;
+  console.log(pathname)
+
+  useEffect(() => {}, [pathname]);
 
   const handleNav = () => {
     setNav(!nav);
   };
 
-const changeBackground = () => {
-  if(window.scrollY>=80){
-    setNavbar(true);
-  }else{
-    setNavbar(false);
+  const changeBackground = () => {
+    if (window.scrollY >= 68) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
   }
-}
 
-window.addEventListener('scroll', changeBackground);
+  window.addEventListener('scroll', changeBackground);
 
 
   return (
     <nav
-
-      className={`w-full font-poppins z-50 pl-5 pr-5  sticky top-3  ${
-        pathname === "/login" && "bg-gray-700"
-      } bg-transparent h-20`} >
-
-
-      {/* <nav
-      className={navbar?"w-full font-poppins z-50 pl-5 pr-5  sticky top-3 md:bg-gray-700 bg-gray-700":"w-full font-poppins z-50 pl-5 pr-5  sticky top-3 bg-transparent"}
-    >  */}
+      className={navbar && pathname === '/' ? "w-full top-0 font-poppins z-50 pl-5 pr-5 ease-in-out duration-1000  sticky md:bg-gray-900 bg-gray-900" : `w-full font-poppins z-50 pl-5 pr-5  sticky top-0 ${pathname !== '/' && 'bg-gray-900'}`}
+    >
 
       <div className="container mx-auto h-full bg-transparent">
         <div className="flex justify-between items-center w-full lg:px-8  z-50 nav-area left-0">
@@ -90,7 +89,7 @@ window.addEventListener('scroll', changeBackground);
                 : "ease-in-out duration-500 fixed left-[-100%]"
             }
           >
-            <img className="logo w-24 h-18 p-4 " src={LOGO} alt="" />
+            <img className="logo w-22 h-20 p-4 " src={LOGO} alt="" />
             <li className="p-4 border-b border-gray-600 text-white">News</li>
             <li className="p-4 border-b border-gray-600 text-white">
               <Link to="/packages">Destination</Link>
