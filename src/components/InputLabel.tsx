@@ -5,6 +5,7 @@ const InputLabel = (props: Props) => {
     <div>
       <label htmlFor="">Name</label>
       <input type="text" />
+      {/* Sayman new */}
     </div>
   );
 };
