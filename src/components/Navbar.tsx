@@ -13,13 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-
-      className={`w-full font-poppins z-50 sticky top-3 ${pathname !== '/' && 'bg-gray-900'}  h-20`}
-
-  
-
-    >
+    <nav className={`w-full font-poppins z-50 sticky top-0 ${pathname !== '/' && 'bg-gray-900'} h-20`}>
       <div className="container mx-auto h-full bg-transparent">
         <div className="flex justify-between items-center w-full lg:px-8  z-50 nav-area left-0">
           <div className="logo flex items-center">
