@@ -4,6 +4,7 @@ import ModalVideo from "react-modal-video";
 import "./../../utilities/modal-video.min.css";
 import React from 'react'
 import Banner from "./Banner/Banner";
+import PackagesHome from "./packagesHome/PackagesHome";
 
 
 type Props = {}
@@ -131,6 +132,7 @@ const Home = (props: Props) => {
       </div>
     </div>
     <Banner />
+    <PackagesHome />
     </>
   );
 }

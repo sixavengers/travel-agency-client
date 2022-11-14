@@ -4,7 +4,7 @@ import Bannerimg from "../../../images/banner.png"
 const Banner = () => {
     return (
         <div>
-            <img className='md:mt-2 px-20 mb-5 bannerimg mt-8' src={Bannerimg} alt="" />
+            <img className='md:mt-0 px-20 mb-14 bannerimg mt-8' src={Bannerimg} alt="" />
         </div>
     );
 };
