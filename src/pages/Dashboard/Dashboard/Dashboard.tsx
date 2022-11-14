@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { BiArrowBack, BiGridAlt, BiRocket } from "react-icons/bi";
 import { Link, Outlet } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
-
+import LOGO from "../../../images/logo.png";
 import "../styles/dashboard.scss";
+import "../styles/packages.scss";
 import DashboardMenus from "./DashboardMenus";
 type Props = {};
 
@@ -49,7 +50,8 @@ const Dashboard = (props: Props) => {
                 to="/"
                 className="flex items-center gap-2 text-2xl text-gray-300 font-bold"
               >
-                <BiRocket /> <span>Travel</span>
+                {/* <BiRocket /> <span>Travel</span> */}
+                <img src={LOGO} alt="logo" width={110} />
               </Link>
               <span
                 onClick={handleCollapse}
@@ -66,8 +68,8 @@ const Dashboard = (props: Props) => {
       </div>
 
       {/* dashboard main content */}
-      <div className="dashboard__main">
-        <div className="dashboard__main__header bg-slate-50 shadow-sm rounded-lg p-3">
+      <div className="dashboard__main ">
+        <div className="dashboard__main__header bg-slate-50 shadow-sm rounded-lg p-3 sticky top-1 z-40">
           <div className="dashboard__main__header__left flex flex-col sm:flex-row items-center justify-between">
             {isCollapse && (
               <Link
@@ -86,7 +88,7 @@ const Dashboard = (props: Props) => {
               />
             </div>
 
-            <div className="dashboard__main__header__left__user flex items-center gap-2 bg-white rounded-lg border px-2 py-1 cursor-pointer">
+            <div className="dashboard__main__header__left__user relative flex items-center gap-2 bg-white rounded-lg border px-2 py-1 cursor-pointer group">
               <img
                 src={
                   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2-DHbjWwdCcYymoNzbsnaz8KeoXzVUaShnQF3-Qn&s"
@@ -94,13 +96,28 @@ const Dashboard = (props: Props) => {
                 alt="user"
                 className="w-10 h-10 rounded-full object-cover border-2 border-gray-100"
               />
-              <div className="flex flex-col items-start">
+              <div className="flex flex-col items-start relative">
                 <span className="dashboard__main__header__left__user__name font-medium text-sm">
                   John Doe
                 </span>
                 <span className="dashboard__main__header__left__user__role text-xs text-slate-400">
                   Admin
                 </span>
+              </div>
+              <div className="avatar-dropdown absolute top-0  opacity-0 transition-all delay-100  group-hover:top-11 border-t-0 rounded-t-none group-hover:opacity-100 rounded-lg bg-white  w-full left-0 text-sm shadow-sm border p-2 ">
+                <div className="dropdown__menu">
+                  <ul className="flex flex-col items-start">
+                    <li className="dropdown__menu__item hover:bg-gray-100 w-full px-2 py-1 rounded-lg">
+                      <Link to="/dashboard/profile">Profile</Link>
+                    </li>
+                    <li className="dropdown__menu__item hover:bg-gray-100 w-full px-2 py-1 rounded-lg">
+                      <Link to="/dashboard/settings">Settings</Link>
+                    </li>
+                    <li className="dropdown__menu__item hover:bg-gray-100 w-full px-2 py-1 rounded-lg">
+                      <Link to="/dashboard/logout">Logout</Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

@@ -3,6 +3,10 @@
   position: relative;
 } */
 
+/* body{
+  overflow: hidden;
+} */
+
 /* .bg-img {
   background-position: center center;
   background-size: cover;
@@ -11,6 +15,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.637)),
     url(/src/images/home-bg.png);
 } */
+
 
 .logo {
   width: 120px;
@@ -25,4 +30,8 @@
 
 .search-input input::placeholder {
   color: #ffffff;
+}
+
+.bannerimg{
+  border-radius: 8%
 }

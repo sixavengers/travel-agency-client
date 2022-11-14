@@ -3,12 +3,15 @@ import { BiPlay } from "react-icons/bi";
 import ModalVideo from "react-modal-video";
 import "./../../utilities/modal-video.min.css";
 import React from 'react'
+import Banner from "./Banner/Banner";
+
 
 type Props = {}
 
 const Home = (props: Props) => {
   const [isOpen, setOpen] = useState(false);
   return (
+    <>
     <div className="full-area">
       <ModalVideo
         channel="youtube"
@@ -17,14 +20,14 @@ const Home = (props: Props) => {
         onClose={() => setOpen(false)}
       />
       <div className="w-full min-h-screen grid place-items-center font-poppins">
-        <div className="absolute top-0 right-0 bottom-0 left-0 bg-[#000300] opacity-50 z-40 w-full h-full"></div>
+        <div className="absolute top-0 right-0 bottom-0 left-0 bg-[#000300] opacity-30 z-40 w-full h-full"></div>
 
         {/* Video area */}
         <video
           autoPlay
           loop
           muted
-          className="absolute top-0 left-0 w-full object-cover h-full"
+          className="absolute top-0 left-0 bottom-0 w-full object-cover h-full"
         >
           <source
             src={
@@ -33,9 +36,9 @@ const Home = (props: Props) => {
             type="video/mp4"
           />
         </video>
-        <div className="lg:container z-40 mx-auto px-5 2xl:px-0">
-          <div className="flex items-center justify-between 2xl:gap-80 lg:gap-28 flex-col md:flex-row md:gap-x-8 md:gap-y-12 gap-14 ">
-            <div className="left-content 2xl:flex-1 md:mt-10 mt-28 mx-auto sm:pr-8">
+        <div className="lg:container z-40 mx-auto px-5 2xl:px-0 ">
+          <div className="md:flex items-center justify-between 2xl:gap-80 lg:gap-28 flex-col md:flex-row md:gap-x-8 md:gap-y-12 gap-14">
+            <div className="left-content 2xl:flex-1 md:mt-6  mt-25 mx-auto sm:pr-8">
               <h1 className="md:text-4xl lg:font-5xl font-bold  text-white font-poppins leading-snug">
                 Find Your Perfect <br />
                 <span className="text-theme-secondary md:text-4xl lg:font-5xl">
@@ -51,23 +54,25 @@ const Home = (props: Props) => {
                 Himchari National Park has waterfalls and many birds. North, sea
                 turtles breed on nearby Sonadia Island.
               </p>
-
-              <div className="flex items-center gap-3 mt-4">
+              
+              <div className="flex items-center gap-4 sm:gap-0 mt-4 ">
                 {/* ========================== */}
-                <span
-                  onClick={() => setOpen(true)}
-                  className="w-12 h-12 bg-white grid place-items-center text-4xl cursor-pointer rounded-full text-black absolute left-[4%] bottom-[35%] md:bottom-[2%]"
-                >
-                  <BiPlay />
-                </span>
+                <div>
+                  <span
+                    onClick={() => setOpen(true)}
+                    className="w-12 h-12 bg-white grid place-items-center text-4xl cursor-pointer rounded-full text-black md:absolute md:left-[4%] bottom-[35%] md:bottom-[2%]"
+                  >
+                    <BiPlay />
+                  </span>
+                </div>
 
-                <button className="bg-[#F9A51A] text-black 2xl:px-6 px-5  rounded mt-2 2xl:h-16 h-12">
+                <button className="bg-[#F9A51A] text-black 2xl:px-6 px-5 rounded mt-2 2xl:h-16 h-12">
                   Explore Now
                 </button>
               </div>
             </div>
             <div className="right-content 2xl:flex-1 sm:pr-8">
-              <form action="" className="bg-white shadow rounded 2xl:p-20 p-10 sm:pr-8 lg:pr-8">
+              <form action="" className="bg-white shadow rounded 2xl:p-20 p-10 sm:pr-8 lg:pr-8 mt-5">
 
                 <div className="inputs">
                   <div className="input-group">
@@ -125,6 +130,8 @@ const Home = (props: Props) => {
         </div>
       </div>
     </div>
+    <Banner />
+    </>
   );
 }
 export default Home

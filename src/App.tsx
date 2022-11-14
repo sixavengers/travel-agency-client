@@ -3,15 +3,18 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar";
+
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 import Overview from "./pages/Dashboard/Overview/Overview";
 import AddPackage from "./pages/Dashboard/Packages/AddPackage/AddPackage";
 import PackageList from "./pages/Dashboard/Packages/PackageList/PackageList";
 import Profile from "./pages/Dashboard/Profile/Profile";
+import Settings from "./pages/Dashboard/Settings/Settings";
 import Users from "./pages/Dashboard/Users/Users";
 import Login from "./pages/login-register/Login";
 import Register from "./pages/login-register/Register";
 import Packages from "./pages/packeges/Packages";
+
 
 import "./utilities/CustomClass.css";
 function App() {
@@ -41,6 +44,9 @@ function App() {
 
           {/* profile */}
           <Route path="profile" element={<Profile />} />
+
+          {/* settings */}
+          <Route path="settings" element={<Settings />} />
         </Route>
       </Routes>
 
