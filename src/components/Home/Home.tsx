@@ -3,12 +3,15 @@ import { BiPlay } from "react-icons/bi";
 import ModalVideo from "react-modal-video";
 import "./../../utilities/modal-video.min.css";
 import React from 'react'
+import Banner from "./Banner/Banner";
+
 
 type Props = {}
 
 const Home = (props: Props) => {
   const [isOpen, setOpen] = useState(false);
   return (
+    <>
     <div className="full-area">
       <ModalVideo
         channel="youtube"
@@ -17,7 +20,7 @@ const Home = (props: Props) => {
         onClose={() => setOpen(false)}
       />
       <div className="w-full min-h-screen grid place-items-center font-poppins">
-        <div className="absolute top-0 right-0 bottom-0 left-0 bg-[#000300] opacity-50 z-40 w-full h-full"></div>
+        <div className="absolute top-0 right-0 bottom-0 left-0 bg-[#000300] opacity-30 z-40 w-full h-full"></div>
 
         {/* Video area */}
         <video
@@ -127,6 +130,8 @@ const Home = (props: Props) => {
         </div>
       </div>
     </div>
+    <Banner />
+    </>
   );
 }
 export default Home
