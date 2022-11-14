@@ -1,5 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
+import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar";
 
@@ -48,6 +49,8 @@ function App() {
           <Route path="settings" element={<Settings />} />
         </Route>
       </Routes>
+
+      <Footer/>
     </div>
   );
 }

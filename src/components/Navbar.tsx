@@ -7,10 +7,6 @@ import LOGO from "../images/logo.png";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [navbar, setNavbar] = useState(false)
-
-
-
-
   const pathname = window.location.pathname;
   console.log(pathname)
 
@@ -19,7 +15,6 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
-
   const changeBackground = () => {
     if (window.scrollY >= 68) {
       setNavbar(true);
@@ -30,12 +25,10 @@ const Navbar = () => {
 
   window.addEventListener('scroll', changeBackground);
 
-
   return (
     <nav
       className={navbar && pathname === '/' ? "w-full top-0 font-poppins z-50 pl-5 pr-5 ease-in-out duration-1000  sticky md:bg-gray-900 bg-gray-900" : `w-full font-poppins z-50 pl-5 pr-5  sticky top-0 ${pathname !== '/' && 'bg-gray-900'}`}
     >
-
       <div className="container mx-auto h-full bg-transparent">
         <div className="flex justify-between items-center w-full lg:px-8  z-50 nav-area left-0">
           <div className="logo flex items-center">
