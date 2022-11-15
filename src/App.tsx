@@ -3,6 +3,7 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar";
+import AllPackages from "./pages/Dashboard/AllPackages/AllPackages";
 
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 import Overview from "./pages/Dashboard/Overview/Overview";
@@ -40,6 +41,9 @@ function App() {
 
           {/* users */}
           <Route path="users" element={<Users />} />
+
+          {/* all package */}
+          <Route path="admin/packages" element={<AllPackages />} />
 
           {/* profile */}
           <Route path="profile" element={<Profile />} />

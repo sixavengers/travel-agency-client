@@ -36,6 +36,11 @@ const DashboardMenus = (props: Props) => {
       icon: <FaUsers />,
     },
     {
+      name: "All Packages",
+      path: "/dashboard/admin/packages",
+      icon: <BiPackage />,
+    },
+    {
       name: "Profile",
       path: "/dashboard/profile",
       icon: <BiUser />,

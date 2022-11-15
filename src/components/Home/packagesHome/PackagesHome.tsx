@@ -32,9 +32,9 @@ const bestPackages = [
 
 const PackagesHome = () => {
   return (
-    <div className="bg-[#EBF0F4] p-5 mb-6 ">
+    <div className="bg-[#EBF0F4] p-5 py-10 ">
       <div className="container mx-auto">
-        <h2 className="text-2xl text-center capitalize my-4 font-poppins">
+        <h2 className="text-3xl font-bold  text-center uppercase text-sky-500 my-4 font-poppins">
           Best Packages for you
         </h2>
         <hr className="w-24 rounded-lg bg-indigo-600 mx-auto" />
