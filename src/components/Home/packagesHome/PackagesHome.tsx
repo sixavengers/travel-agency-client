@@ -40,7 +40,7 @@ const PackagesHome = () => {
         <hr className="w-24 rounded-lg bg-indigo-600 mx-auto" />
 
         {/* CARDS-AREA****************************** */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 justify-items-start mt-10 mb-10 md:pl-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10">
           {bestPackages?.map((data: any) => (
             <BestPackageCard data={data} />
           ))}
