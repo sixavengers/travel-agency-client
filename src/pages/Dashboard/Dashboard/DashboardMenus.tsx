@@ -1,4 +1,4 @@
-import { BiPackage, BiPlus, BiUser } from "react-icons/bi";
+import { BiLogOut, BiPackage, BiPlus, BiUser } from "react-icons/bi";
 import { FaUsers } from "react-icons/fa";
 import { IoMdSettings, IoMdSpeedometer } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
@@ -36,6 +36,11 @@ const DashboardMenus = (props: Props) => {
       icon: <FaUsers />,
     },
     {
+      name: "All Packages",
+      path: "/dashboard/admin/packages",
+      icon: <BiPackage />,
+    },
+    {
       name: "Profile",
       path: "/dashboard/profile",
       icon: <BiUser />,
@@ -44,6 +49,11 @@ const DashboardMenus = (props: Props) => {
       name: "Settings",
       path: "/dashboard/settings",
       icon: <IoMdSettings />,
+    },
+    {
+      name: "Logout",
+      path: "/dashboard/settings",
+      icon: <BiLogOut />,
     },
   ];
 

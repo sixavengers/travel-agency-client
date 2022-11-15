@@ -3,6 +3,7 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar";
+import AllPackages from "./pages/Dashboard/AllPackages/AllPackages";
 
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 import Overview from "./pages/Dashboard/Overview/Overview";
@@ -15,7 +16,6 @@ import Login from "./pages/login-register/Login";
 import Register from "./pages/login-register/Register";
 import Packages from "./pages/packeges/Packages";
 import Payment from "./pages/payment/Payment";
-
 
 import "./utilities/CustomClass.css";
 function App() {
@@ -34,16 +34,19 @@ function App() {
         <Route path="/packages" element={<Packages />} />
         <Route path="/payment" element={<Payment />} />
 
+
         {/* dashboard routes */}
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="" index element={<Overview />} />
-
           {/* packages */}
           <Route path="package/add" element={<AddPackage />} />
           <Route path="package/list" element={<PackageList />} />
 
           {/* users */}
           <Route path="users" element={<Users />} />
+
+          {/* all package */}
+          <Route path="admin/packages" element={<AllPackages />} />
 
           {/* profile */}
           <Route path="profile" element={<Profile />} />
@@ -52,8 +55,7 @@ function App() {
           <Route path="settings" element={<Settings />} />
         </Route>
       </Routes>
-
-      <Footer/>
+      {!pathname.includes("dashboard") && <Footer />}
     </div>
   );
 }
