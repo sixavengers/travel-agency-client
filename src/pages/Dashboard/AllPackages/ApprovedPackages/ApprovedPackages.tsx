@@ -7,11 +7,7 @@ const ApprovedPackages = (props: Props) => {
     <div className="p-5 bg-white">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-medium">Approved Packages</h1>
-        <div className="flex items-center gap-2">
-          <button className="bg-blue-500 text-blue-100 p-2 px-4 inline-block capitalize">
-            add new
-          </button>
-        </div>
+        <div className="flex items-center gap-2"></div>
       </div>
 
       <div className="overflow-x-auto">

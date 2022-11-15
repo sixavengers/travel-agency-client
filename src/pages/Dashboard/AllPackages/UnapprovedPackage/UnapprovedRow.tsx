@@ -6,10 +6,10 @@ type Props = {};
 const UnapprovedRow = (props: Props) => {
   return (
     <tr>
-      <td className="border px-4 py-2">
+      <td className="border-0 border-b px-4 py-2">
         <div className="flex gap-2 items-center">
           <img
-            className="w-14 h-14 object-cover rounded-full border-4 border-blue-500"
+            className="w-14 h-14 object-cover rounded border-4 "
             src="http://localhost:3000/static/media/card1.7f4575419f91913a95fd.png"
             alt=""
           />
@@ -21,12 +21,12 @@ const UnapprovedRow = (props: Props) => {
           </div>
         </div>
       </td>
-      <td className="border px-4 py-2">
+      <td className="border-0 border-b px-4 py-2">
         <span className="bg-blue-100 text-blue-500 p-1 inline-block rounded">
           189 $
         </span>
       </td>
-      <td className="border px-4 py-2">
+      <td className="border-b px-4 py-2">
         <div className="flex items-center gap-2">
           <p>
             <MdLocationOn />
@@ -34,8 +34,10 @@ const UnapprovedRow = (props: Props) => {
           <p>Cox's Bazar</p>
         </div>
       </td>
-      <td className="border px-4 py-2">Discover two of South America...</td>
-      <td className="border px-4 py-2">
+      <td className=" border-0 border-b b px-4 py-2">
+        Discover two of South America...
+      </td>
+      <td className="border-0 border-b px-4 py-2">
         <div className="flex items-center gap-2">
           <button className="bg-green-500 text-green-100 rounded-full p-1 px-2 flex items-center  capitalize gap-2">
             <BiCheck /> Confirm
