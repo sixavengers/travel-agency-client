@@ -15,7 +15,6 @@ import Login from "./pages/login-register/Login";
 import Register from "./pages/login-register/Register";
 import Packages from "./pages/packeges/Packages";
 
-
 import "./utilities/CustomClass.css";
 function App() {
   const { pathname } = useLocation();
@@ -31,10 +30,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/packages" element={<Packages />} />
+
         {/* dashboard routes */}
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="" index element={<Overview />} />
-
           {/* packages */}
           <Route path="package/add" element={<AddPackage />} />
           <Route path="package/list" element={<PackageList />} />
@@ -49,8 +48,7 @@ function App() {
           <Route path="settings" element={<Settings />} />
         </Route>
       </Routes>
-
-      <Footer/>
+      {!pathname.includes("dashboard") && <Footer />}
     </div>
   );
 }
