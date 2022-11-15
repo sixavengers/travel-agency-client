@@ -14,6 +14,7 @@ import Users from "./pages/Dashboard/Users/Users";
 import Login from "./pages/login-register/Login";
 import Register from "./pages/login-register/Register";
 import Packages from "./pages/packeges/Packages";
+import Payment from "./pages/payment/Payment";
 
 
 import "./utilities/CustomClass.css";
@@ -31,6 +32,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/packages" element={<Packages />} />
+        <Route path="/payment" element={<Payment />} />
+
         {/* dashboard routes */}
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="" index element={<Overview />} />
