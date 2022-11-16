@@ -6,9 +6,9 @@ import card1 from '../../../images/cards/card1.png'
 const PackegeDetails = () => {
     return (
         <div className='md:mx-32'>
-            <div className='md:mt-4 md:flex justify-around items-center'>
+            <div className='md:mt-4 md:flex lg-flex justify-around items-center'>
                 <div>
-                    <img className=' md:h-96 shadow-xl' src={card1} alt="" />
+                    <img className='md:h-96 shadow-xl' src={card1} alt="" />
                 </div>
 
 
