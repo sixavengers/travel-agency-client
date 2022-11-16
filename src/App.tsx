@@ -1,6 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
+import PackegeDetails from "./components/Home/details/PackegeDetails";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar";
 import AllPackages from "./pages/Dashboard/AllPackages/AllPackages";
@@ -33,6 +34,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/packages" element={<Packages />} />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/details" element={<PackegeDetails />} />
 
 
         {/* dashboard routes */}
