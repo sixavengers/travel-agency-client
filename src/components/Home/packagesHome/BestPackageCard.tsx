@@ -26,7 +26,7 @@ const BestPackageCard = ({ data }: Props) => {
           <p>
             <MdLocationOn />
           </p>
-          <span>{data?.origin}</span> to <span>{data?.destination}</span>
+          <span>{data?.destination}</span>- to -<span>{data?.origin}</span>
         </div>
         <p className="md:ml-1">{(data?.description).slice(0, 40)}....</p>
         <button className="bg-blue-500 text-blue-100 p-2 px-4 inline-block mt-3 capitalize">
