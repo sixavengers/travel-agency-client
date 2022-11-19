@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { Link } from "react-router-dom";
@@ -6,9 +6,9 @@ import LOGO from "../images/logo.png";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [navbar, setNavbar] = useState(false)
+  const [navbar, setNavbar] = useState(false);
   const pathname = window.location.pathname;
-  console.log(pathname)
+  console.log(pathname);
 
   useEffect(() => {}, [pathname]);
 
@@ -21,22 +21,30 @@ const Navbar = () => {
     } else {
       setNavbar(false);
     }
-  }
+  };
 
-  window.addEventListener('scroll', changeBackground);
+  window.addEventListener("scroll", changeBackground);
 
   return (
     <nav
-      className={navbar && pathname === '/' ? "w-full top-0 font-poppins z-50 pl-5 pr-5 ease-in-out duration-1000  sticky md:bg-gray-900 bg-gray-900" : `w-full font-poppins z-50 pl-5 pr-5  sticky top-0 ${pathname !== '/' && 'bg-gray-900'}`}
+      className={
+        navbar && pathname === "/"
+          ? "w-full top-0 font-poppins z-50 pl-5 pr-5 ease-in-out duration-1000  sticky md:bg-gray-900 bg-gray-900"
+          : `w-full font-poppins z-50 pl-5 pr-5  sticky top-0 ${
+              pathname !== "/" && "bg-gray-900"
+            }`
+      }
     >
       <div className="container mx-auto h-full bg-transparent">
         <div className="flex justify-between items-center w-full lg:px-8  z-50 nav-area left-0">
           <div className="logo flex items-center">
-            <img
-              className="logo h-10 w-20 md:h-auto md:w-auto "
-              src={LOGO}
-              alt="app-logo"
-            />
+            <Link to="/" className="cursor-pointer">
+              <img
+                className="logo h-10 w-20 md:h-auto md:w-auto "
+                src={LOGO}
+                alt="app-logo"
+              />
+            </Link>
           </div>
 
           <div className="justify-between items-center border border-white p-2 rounded search-input w-96 hidden md:flex ">

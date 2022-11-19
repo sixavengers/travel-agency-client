@@ -1,36 +1,21 @@
-import card1 from "../../../images/cards/card1.png";
-import card2 from "../../../images/cards/card2.png";
-import card3 from "../../../images/cards/card3.png";
+import axios from "axios";
+import { useQuery } from "react-query";
 import BestPackageCard from "./BestPackageCard";
-
-const bestPackages = [
-  {
-    image: card1,
-    title: "St. Martin's Island",
-    location: "Cox's Bazar",
-    description: "Discover two of South America...",
-  },
-  {
-    image: card2,
-    title: "St. Martin's Island",
-    location: "Cox's Bazar",
-    description: "Discover two of South America...",
-  },
-  {
-    image: card3,
-    title: "St. Martin's Island",
-    location: "Cox's Bazar",
-    description: "Discover two of South America...",
-  },
-  {
-    image: card1,
-    title: "St. Martin's Island",
-    location: "Cox's Bazar",
-    description: "Discover two of South America...",
-  },
-];
-
 const PackagesHome = () => {
+  const fetchUser = async () => {
+    const response = await axios.get(
+      "http://localhost:5000/api/package/mostpopular"
+    );
+    return response.data;
+  };
+  const { data: alldata, isLoading, error } = useQuery("user", fetchUser);
+  console.log(alldata);
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <h1>Error...</h1>;
+  }
   return (
     <div className="bg-[#EBF0F4] p-5 py-10 ">
       <div className="container mx-auto">
@@ -41,7 +26,7 @@ const PackagesHome = () => {
 
         {/* CARDS-AREA****************************** */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10">
-          {bestPackages?.map((data: any) => (
+          {alldata?.data?.map((data: any) => (
             <BestPackageCard data={data} />
           ))}
         </div>
