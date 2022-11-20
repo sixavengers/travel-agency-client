@@ -8,7 +8,10 @@ const FindAccount = () => {
                 
                 <div className='border-b-2 border-gray-200 mt-3'></div>
                 <p className='mt-5 font-roboto text-lg px-8'>Please enter your email address or mobile number to search for your account</p>
-                <input className='border border-gray-300 outline-none mt-3 mb-6 p-3 rounded-lg md:w-80 md:ml-32 ml-8' type="email" name="" id="" placeholder='Email address or phone number'/>
+
+                <div className='md:w-[75%] w-[80%] mx-auto'>
+                    <input className='border border-gray-300 outline-none mt-3 mb-6 p-3 rounded-lg w-full' type="email" name="" id="" placeholder='Email address or phone number' />
+                </div>
                 
                 <div className='border-b-2 border-gray-200 mt-3'></div>
                 <div className='text-right px-8'>
