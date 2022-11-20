@@ -16,6 +16,7 @@ import Users from "./pages/Dashboard/Users/Users";
 import Login from "./pages/login-register/Login";
 import Register from "./pages/login-register/Register";
 import Packages from "./pages/packeges/Packages";
+import ChangePassword from "./pages/passwordReseat/ChangePassword";
 import FindAccount from "./pages/passwordReseat/FindAccount";
 import Reset from "./pages/passwordReseat/Reset";
 import Verification from "./pages/passwordReseat/Verification";
@@ -41,6 +42,7 @@ function App() {
         <Route path="/findaccount" element={<FindAccount />} />
         <Route path="/reset" element={<Reset />} />
         <Route path="/verification" element={<Verification />} />
+        <Route path="/changepassword" element={<ChangePassword />} />
 
 
         {/* dashboard routes */}
