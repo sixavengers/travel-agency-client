@@ -18,6 +18,7 @@ import Register from "./pages/login-register/Register";
 import Packages from "./pages/packeges/Packages";
 import FindAccount from "./pages/passwordReseat/FindAccount";
 import Reset from "./pages/passwordReseat/Reset";
+import Verification from "./pages/passwordReseat/Verification";
 import Payment from "./pages/payment/Payment";
 
 import "./utilities/CustomClass.css";
@@ -39,6 +40,7 @@ function App() {
         <Route path="/details" element={<PackegeDetails />} />
         <Route path="/findaccount" element={<FindAccount />} />
         <Route path="/reset" element={<Reset />} />
+        <Route path="/verification" element={<Verification />} />
 
 
         {/* dashboard routes */}
