@@ -17,6 +17,7 @@ import Login from "./pages/login-register/Login";
 import Register from "./pages/login-register/Register";
 import Packages from "./pages/packeges/Packages";
 import FindAccount from "./pages/passwordReseat/FindAccount";
+import Reset from "./pages/passwordReseat/Reset";
 import Payment from "./pages/payment/Payment";
 
 import "./utilities/CustomClass.css";
@@ -37,6 +38,7 @@ function App() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/details" element={<PackegeDetails />} />
         <Route path="/findaccount" element={<FindAccount />} />
+        <Route path="/reset" element={<Reset />} />
 
 
         {/* dashboard routes */}
