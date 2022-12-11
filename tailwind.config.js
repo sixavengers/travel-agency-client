@@ -8,6 +8,7 @@ module.exports = {
       poppins: ["Poppins", "sans-serif"],
       roboto: ["Roboto", "sans-serif"],
       montserrat: ["Montserrat", "sans-serif"],
+      grotesk: ['Hanken Grotesk', "Montserrat"],
     },
     
   },

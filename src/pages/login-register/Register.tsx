@@ -1,22 +1,30 @@
+import cogoToast from "cogo-toast";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import facebook from "../../images/facebookicon.png";
 import google from "../../images/googleicon.png";
-
 const Register = () => {
   const {
     register,
+    handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<any>();
+
+  /* handle register user */
+  const handleRegisterUser = handleSubmit(async (data) => {
+    if (data?.password !== data?.confirmPassword) {
+      return cogoToast.warn("Password doesn't match");
+    }
+  });
 
   return (
-    <div className="flex h-screen justify-center items-center mt-20 font-poppins">
+    <div className="flex h-screen justify-center items-center mt-20 font-grotesk">
       <div>
         <div className="sm:w-86 lg:w-96 border-2 p-7 rounded">
           <div className="card-body">
             <h2 className="text-2xl font-bold mb-5">Create an account</h2>
 
-            <form>
+            <form onSubmit={handleRegisterUser}>
               <div className="form-control w-full max-w-xs rounded">
                 <label className="label">
                   <span className="label-text">Full Name</span>
@@ -33,8 +41,10 @@ const Register = () => {
                   })}
                 />
                 <label className="label">
-                  {errors.email?.type === "required" && (
-                    <span className="label-text-alt text-red-500">{}</span>
+                  {errors.name?.type === "required" && (
+                    <span className="label-text-alt text-red-500 text-sm">
+                      {(errors?.name as any).message || "Name is Required"}
+                    </span>
                   )}
                 </label>
               </div>
@@ -60,10 +70,14 @@ const Register = () => {
                 />
                 <label className="label">
                   {errors.email?.type === "required" && (
-                    <span className="label-text-alt text-red-500"></span>
+                    <span className="label-text-alt text-red-500">
+                      {(errors?.email as any)?.message}
+                    </span>
                   )}
                   {errors.email?.type === "pattern" && (
-                    <span className="label-text-alt text-red-500"></span>
+                    <span className="label-text-alt text-red-500">
+                      {(errors?.email as any)?.message}
+                    </span>
                   )}
                 </label>
               </div>
@@ -89,10 +103,14 @@ const Register = () => {
                 />
                 <label className="label">
                   {errors.password?.type === "required" && (
-                    <span className="label-text-alt text-red-500"></span>
+                    <span className="label-text-alt text-red-500">
+                      {(errors?.password as any)?.message}
+                    </span>
                   )}
                   {errors.password?.type === "minLength" && (
-                    <span className="label-text-alt text-red-500"></span>
+                    <span className="label-text-alt text-red-500">
+                      {(errors?.password as any)?.message}
+                    </span>
                   )}
                 </label>
               </div>
@@ -105,7 +123,7 @@ const Register = () => {
                   type="password"
                   placeholder=""
                   className="input max-w-xs 2xl:p-2 p-2 my-1 rounded outline-none w-full bg-[#F2F2F2]"
-                  {...register("password", {
+                  {...register("confirmPassword", {
                     required: {
                       value: true,
                       message: "password is Required",
@@ -117,21 +135,26 @@ const Register = () => {
                   })}
                 />
                 <label className="label">
-                  {errors.password?.type === "required" && (
-                    <span className="label-text-alt text-red-500"></span>
+                  {errors.confirmPassword?.type === "required" && (
+                    <span className="label-text-alt text-red-500">
+                      {(errors?.confirmPassword as any)?.message}
+                    </span>
                   )}
-                  {errors.password?.type === "minLength" && (
-                    <span className="label-text-alt text-red-500"></span>
+                  {errors.confirmPassword?.type === "minLength" && (
+                    <span className="label-text-alt text-red-500">
+                      {(errors?.confirmPassword as any)?.message}
+                    </span>
                   )}
                 </label>
               </div>
 
               <div className="bg-[#F9A51A] p-2 mt-5 rounded">
-                <input
-                  className="btn w-full max-w-xs cursor-pointer hover:tracking-widest transition-all"
-                  type="Submit"
-                  value="create an account"
-                />
+                <button
+                  type="submit"
+                  className="text-white font-bold text-center w-full"
+                >
+                  Create an account
+                </button>
               </div>
             </form>
 

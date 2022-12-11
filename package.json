@@ -14,6 +14,7 @@
     "@types/react": "^18.0.6",
     "@types/react-dom": "^18.0.2",
     "apexcharts": "^3.36.3",
+    "cogo-toast": "2.0.1",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
     "react-countup": "^6.3.2",
