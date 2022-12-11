@@ -1,6 +1,8 @@
 import cogoToast from "cogo-toast";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { useRegisterUserMutation } from "../../api/AuthenticationApi";
 import facebook from "../../images/facebookicon.png";
 import google from "../../images/googleicon.png";
 const Register = () => {
@@ -10,12 +12,29 @@ const Register = () => {
     formState: { errors },
   } = useForm<any>();
 
+  const [RegisterUser, { data, isLoading }] = useRegisterUserMutation();
+
   /* handle register user */
   const handleRegisterUser = handleSubmit(async (data) => {
     if (data?.password !== data?.confirmPassword) {
       return cogoToast.warn("Password doesn't match");
     }
+    try {
+      const { confirmPassword, ...other } = data;
+      await RegisterUser(other);
+    } catch (err) {
+      console.log(err);
+    }
   });
+
+  useEffect(() => {
+    if (data) {
+      console.log(data);
+      cogoToast.success(
+        "Yah! Registration successfully done. check email for verification."
+      );
+    }
+  }, [data]);
 
   return (
     <div className="flex h-screen justify-center items-center mt-20 font-grotesk">
@@ -148,13 +167,23 @@ const Register = () => {
                 </label>
               </div>
 
-              <div className="bg-[#F9A51A] p-2 mt-5 rounded">
-                <button
-                  type="submit"
-                  className="text-white font-bold text-center w-full"
-                >
-                  Create an account
-                </button>
+              <div className=" p-2 mt-5 rounded">
+                {isLoading ? (
+                  <button
+                    disabled
+                    className="text-white font-bold text-center w-full cursor-not-allowed opacity-75 flex items-center justify-center gap-2 bg-orange-500 p-2 rounded-md"
+                  >
+                    <span className="w-5 h-5 rounded-full border-2 border-t-gray-400 block animate-spin"></span>
+                    <span>Creating account...</span>
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    className="text-white font-bold text-center w-full bg-orange-500 p-2 rounded-md"
+                  >
+                    Create an account
+                  </button>
+                )}
               </div>
             </form>
 
