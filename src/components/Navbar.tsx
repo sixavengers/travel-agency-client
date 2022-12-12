@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../app/hooks";
+import { logout } from "../features/auth/AuthSlice";
 import useFetchUser from "../hooks/useFetchUser";
 import LOGO from "../images/logo.png";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [navbar, setNavbar] = useState(false);
-  const { token } = useFetchUser({});
+  const { token, user, setUser } = useFetchUser({});
   const pathname = window.location.pathname;
-  console.log(pathname);
+  const navigate = useNavigate();
+  const [cookies, setCookie, removeCookie] = useCookies(["travel" || ""]);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {}, [pathname]);
 
@@ -27,14 +32,23 @@ const Navbar = () => {
 
   window.addEventListener("scroll", changeBackground);
 
+  /* handle logout */
+  const handleLogout = () => {
+    dispatch(logout());
+    removeCookie("travel", { path: "/" });
+    setUser(null);
+    navigate("/");
+    console.log(cookies, setCookie);
+  };
+
   return (
     <nav
       className={
         navbar && pathname === "/"
-          ? "w-full py-3 top-0 font-poppins z-50 pl-5 pr-5 ease-in-out duration-1000  sticky md:bg-gray-900 bg-gray-900"
-          : `w-full py-3 font-poppins z-50 pl-5 pr-5  sticky top-0 ${
+          ? "w-full py-1 top-0 font-poppins z-50 pl-5 pr-5 ease-in-out duration-1000  sticky md:bg-gray-900 bg-gray-900"
+          : `w-full py-1 font-poppins z-50 pl-5 pr-5  sticky top-0 ${
               pathname !== "/" && "bg-gray-900"
-            } py-6 ease-in-out duration-75`
+            } py-3 ease-in-out duration-75`
       }
     >
       <div className="container mx-auto h-full bg-transparent">
@@ -72,9 +86,26 @@ const Navbar = () => {
               <Link to="/contact">Contact</Link>
             </li>
             {token ? (
-              <li className="p-4 cursor-pointer">
-                <Link to="/dashboard">Dashboard</Link>
-              </li>
+              <>
+                <li className="p-4 cursor-pointer">
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>
+                <li className="p-4 cursor-pointer overflow-hidden flex items-center gap-3">
+                  <span title={user?.name + " with " + user?.email}>
+                    <img
+                      src={user?.avatar}
+                      alt={user?.name}
+                      className="w-10 h-10 rounded-full border-2"
+                    />
+                  </span>
+                  <span
+                    className="cursor-pointer text-red-300 capitalize   p-1 px-3 rounded-lg"
+                    onClick={handleLogout}
+                  >
+                    logout
+                  </span>
+                </li>
+              </>
             ) : (
               <li className="p-4 cursor-pointer">
                 <Link

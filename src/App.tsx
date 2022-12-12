@@ -19,22 +19,24 @@ import Packages from "./pages/packeges/Packages";
 import Payment from "./pages/payment/Payment";
 
 import { useEffect } from "react";
-import Cookies from "universal-cookie";
+import { useCookies } from "react-cookie";
 import { useAppDispatch } from "./app/hooks";
 import ProtectRoute from "./AuthRoute/ProtectRoute";
 import RequireAuth from "./AuthRoute/RequireAuth";
 import { login } from "./features/auth/AuthSlice";
 import "./utilities/CustomClass.css";
-const cookies = new Cookies();
-const user = cookies.get("travel");
+
 function App() {
+  const [cookies] = useCookies(["travel"]);
   const { pathname } = useLocation();
   const dispatch = useAppDispatch();
   useEffect(() => {
-    if (user) {
-      dispatch(login({ user: user?.user, token: user?.token }));
+    if (cookies?.travel?.user && cookies?.travel?.token) {
+      dispatch(
+        login({ user: cookies?.travel?.user, token: cookies?.travel?.token })
+      );
     }
-  }, [dispatch]);
+  }, [dispatch, cookies]);
 
   return (
     <div className="App">
