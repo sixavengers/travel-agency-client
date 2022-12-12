@@ -1,7 +1,7 @@
 import cogoToast from "cogo-toast";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useRegisterUserMutation } from "../../api/AuthenticationApi";
 import facebook from "../../images/facebookicon.png";
 import google from "../../images/googleicon.png";
@@ -12,7 +12,10 @@ const Register = () => {
     formState: { errors },
   } = useForm<any>();
 
-  const [RegisterUser, { data, isLoading }] = useRegisterUserMutation();
+  const [RegisterUser, { data, isLoading, error }] =
+    useRegisterUserMutation<any>();
+
+  const navigate = useNavigate();
 
   /* handle register user */
   const handleRegisterUser = handleSubmit(async (data) => {
@@ -29,12 +32,18 @@ const Register = () => {
 
   useEffect(() => {
     if (data) {
-      console.log(data);
       cogoToast.success(
         "Yah! Registration successfully done. check email for verification."
       );
+      navigate("/login");
     }
-  }, [data]);
+    if (error) {
+      const { data } = error;
+      cogoToast.error(
+        data?.message || "Something went wrong. Try again later."
+      );
+    }
+  }, [data, error, navigate]);
 
   return (
     <div className="flex h-screen justify-center items-center mt-20 font-grotesk">
