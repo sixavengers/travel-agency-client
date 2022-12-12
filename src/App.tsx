@@ -22,6 +22,7 @@ import { useEffect } from "react";
 import Cookies from "universal-cookie";
 import { useAppDispatch } from "./app/hooks";
 import ProtectRoute from "./AuthRoute/ProtectRoute";
+import RequireAuth from "./AuthRoute/RequireAuth";
 import { login } from "./features/auth/AuthSlice";
 import "./utilities/CustomClass.css";
 const cookies = new Cookies();
@@ -64,7 +65,14 @@ function App() {
         <Route path="/details" element={<PackegeDetails />} />
 
         {/* dashboard routes */}
-        <Route path="/dashboard" element={<Dashboard />}>
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
           <Route path="" index element={<Overview />} />
           {/* packages */}
           <Route path="package/add" element={<AddPackage />} />
