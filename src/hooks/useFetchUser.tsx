@@ -19,16 +19,18 @@ const useFetchUser = (props: Props) => {
       setUser(data?.user);
       setLoading(false);
     } catch (error) {
-      console.log(error);
       setLoading(false);
     }
   };
 
   useEffect(() => {
     fetchUser();
+    return () => {
+      setUser(null);
+    };
   }, [token]);
 
-  return [user, loading];
+  return { user, token, loading, setUser };
 };
 
 export default useFetchUser;

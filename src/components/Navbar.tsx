@@ -8,7 +8,7 @@ import LOGO from "../images/logo.png";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [navbar, setNavbar] = useState(false);
-  const [user] = useFetchUser({});
+  const { token } = useFetchUser({});
   const pathname = window.location.pathname;
   console.log(pathname);
 
@@ -25,17 +25,16 @@ const Navbar = () => {
     }
   };
 
-  console.log(user);
   window.addEventListener("scroll", changeBackground);
 
   return (
     <nav
       className={
         navbar && pathname === "/"
-          ? "w-full top-0 font-poppins z-50 pl-5 pr-5 ease-in-out duration-1000  sticky md:bg-gray-900 bg-gray-900"
-          : `w-full font-poppins z-50 pl-5 pr-5  sticky top-0 ${
+          ? "w-full py-3 top-0 font-poppins z-50 pl-5 pr-5 ease-in-out duration-1000  sticky md:bg-gray-900 bg-gray-900"
+          : `w-full py-3 font-poppins z-50 pl-5 pr-5  sticky top-0 ${
               pathname !== "/" && "bg-gray-900"
-            }`
+            } py-6 ease-in-out duration-75`
       }
     >
       <div className="container mx-auto h-full bg-transparent">
@@ -72,12 +71,20 @@ const Navbar = () => {
             <li className="p-4 cursor-pointer">
               <Link to="/contact">Contact</Link>
             </li>
-            <li className="mt-4 mb-4 p-2 px-5 bg-[#F9A51A] rounded cursor-pointer">
-              <Link to="/login">Login</Link>
-            </li>
-            <li className="mt-4 mb-4 p-2 px-5  rounded cursor-pointer">
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
+            {token ? (
+              <li className="p-4 cursor-pointer">
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
+            ) : (
+              <li className="p-4 cursor-pointer">
+                <Link
+                  to="/login"
+                  className="p-2 inline-block bg-orange-400 px-5 rounded"
+                >
+                  Login
+                </Link>
+              </li>
+            )}
           </ul>
 
           <div onClick={handleNav} className="block md:hidden">
