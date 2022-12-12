@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BiArrowBack, BiGridAlt, BiRocket } from "react-icons/bi";
 import { Link, Outlet } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
+import { useAppSelector } from "../../../app/hooks";
 import LOGO from "../../../images/logo.png";
 import "../styles/dashboard.scss";
 import "../styles/packages.scss";
@@ -10,6 +11,10 @@ type Props = {};
 
 const Dashboard = (props: Props) => {
   const [isCollapse, setIsCollapse] = useState(false);
+
+  const state = useAppSelector((state) => state?.authentication);
+
+  console.log(state);
 
   /* handle collapse with localStorage */
   const handleCollapse = () => {

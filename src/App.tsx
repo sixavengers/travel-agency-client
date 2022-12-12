@@ -18,9 +18,22 @@ import Register from "./pages/login-register/Register";
 import Packages from "./pages/packeges/Packages";
 import Payment from "./pages/payment/Payment";
 
+import { useEffect } from "react";
+import Cookies from "universal-cookie";
+import { useAppDispatch } from "./app/hooks";
+import ProtectRoute from "./AuthRoute/ProtectRoute";
+import { login } from "./features/auth/AuthSlice";
 import "./utilities/CustomClass.css";
+const cookies = new Cookies();
+const user = cookies.get("travel");
 function App() {
   const { pathname } = useLocation();
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    if (user) {
+      dispatch(login({ user: user?.user, token: user?.token }));
+    }
+  }, [dispatch]);
 
   return (
     <div className="App">
@@ -30,12 +43,25 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route
+          path="/login"
+          element={
+            <ProtectRoute>
+              <Login />
+            </ProtectRoute>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <ProtectRoute>
+              <Register />
+            </ProtectRoute>
+          }
+        />
         <Route path="/packages" element={<Packages />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/details" element={<PackegeDetails />} />
-
 
         {/* dashboard routes */}
         <Route path="/dashboard" element={<Dashboard />}>

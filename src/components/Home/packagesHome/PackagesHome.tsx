@@ -41,8 +41,8 @@ const PackagesHome = () => {
 
         {/* CARDS-AREA****************************** */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10">
-          {bestPackages?.map((data: any) => (
-            <BestPackageCard data={data} />
+          {bestPackages?.map((data: any, ind: number) => (
+            <BestPackageCard key={data?.title + ind} data={data} />
           ))}
         </div>
       </div>
