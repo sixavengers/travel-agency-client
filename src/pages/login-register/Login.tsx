@@ -1,16 +1,52 @@
+import cogoToast from "cogo-toast";
+import { useEffect } from "react";
+import { useCookies } from "react-cookie";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useLoginUserMutation } from "../../api/AuthenticationApi";
 import facebook from "../../images/facebookicon.png";
 import google from "../../images/googleicon.png";
-
-
 const Login = () => {
   const {
     register,
     formState: { errors },
+    handleSubmit,
   } = useForm();
 
   /* Added comment */
+  const [loginUser, { data, isLoading, error }] = useLoginUserMutation<any>();
+  const [cookies, setCookie] = useCookies(["travel"]);
+  const navigate = useNavigate();
+  /* handle login */
+  const handleLogin = handleSubmit(async (data) => {
+    try {
+      await loginUser(data);
+    } catch (err) {
+      console.log(err);
+    }
+  });
+
+  useEffect(() => {
+    if (data) {
+      cogoToast.success("Login Successful");
+      setCookie(
+        "travel",
+        {
+          token: data.token,
+          user: data.user,
+        },
+        {
+          path: "/",
+          maxAge: 3600,
+        }
+      );
+      navigate("/dashboard");
+    }
+    if (error) {
+      console.log(error);
+      cogoToast.error("Invalid Credentials");
+    }
+  }, [data, error, cookies, setCookie, navigate]);
 
   return (
     <div className="flex h-screen justify-center items-center p-5 font-poppins">
@@ -19,7 +55,7 @@ const Login = () => {
           <div className="card-body">
             <h2 className="text-2xl font-bold mb-5">Login</h2>
 
-            <form>
+            <form onSubmit={handleLogin}>
               <div className="form-control w-full sm:max-w-xs">
                 <label className="label">
                   <span className="label-text ">Username or Email</span>
@@ -41,10 +77,14 @@ const Login = () => {
                 />
                 <label className="label">
                   {errors.email?.type === "required" && (
-                    <span className="label-text-alt text-red-500"></span>
+                    <span className="label-text-alt text-red-500 text-sm font-grotesk">
+                      {(errors?.email as any)?.message}
+                    </span>
                   )}
                   {errors.email?.type === "pattern" && (
-                    <span className="label-text-alt text-red-500"></span>
+                    <span className="label-text-alt text-red-500 text-sm font-grotesk">
+                      {(errors?.email as any)?.message}
+                    </span>
                   )}
                 </label>
               </div>
@@ -70,10 +110,14 @@ const Login = () => {
                 />
                 <label className="label">
                   {errors.password?.type === "required" && (
-                    <span className="label-text-alt text-red-500"></span>
+                    <span className="label-text-alt text-red-500 text-sm font-grotesk">
+                      {(errors?.password as any)?.message}
+                    </span>
                   )}
                   {errors.password?.type === "minLength" && (
-                    <span className="label-text-alt text-red-500"></span>
+                    <span className="label-text-alt text-red-500 text-sm font-grotesk">
+                      {(errors?.password as any)?.message}
+                    </span>
                   )}
                 </label>
               </div>
@@ -88,17 +132,21 @@ const Login = () => {
                 </p>
               </div>
 
-              <div className="bg-[#F9A51A] p-2 mt-5 hover:bg-yellow-400 rounded">
-                <input
-                  className="btn w-full max-w-xs text-red cursor-pointer hover:tracking-widest transition-all"
-                  type="Submit"
-                  value="Login"
-                />
+              <div className="mt-5">
+                {isLoading ? (
+                  <button className="w-full p-2 bg-orange-400 rounded-sm">
+                    <p className="text-white text-center">Loading...</p>
+                  </button>
+                ) : (
+                  <button className="w-full p-2 bg-orange-400 rounded-sm">
+                    <p className="text-white text-center">Login</p>
+                  </button>
+                )}
               </div>
             </form>
 
             <p className="mt-5 text-center">
-              Don't have an account?{" "}
+              Don't have an account?
               <Link
                 to="/register"
                 className="text-[#F9A51A] border-b border-[#F9A51A]"
