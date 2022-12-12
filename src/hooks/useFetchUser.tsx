@@ -28,7 +28,7 @@ const useFetchUser = (props: Props) => {
     return () => {
       setUser(null);
     };
-  }, [token]);
+  });
 
   return { user, token, loading, setUser };
 };
